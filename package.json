@@ -19,6 +19,8 @@
   "homepage": "https://github.com/namrapatel/uworeq#readme",
   "dependencies": {
     "cheerio": "*",
-    "got-scraping": "^3.2.10"
+    "got-scraping": "^3.2.10",
+    "ts-node": "~10.7.0",
+    "typescript": "~4.6.4"
   }
 }
