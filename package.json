@@ -1,0 +1,24 @@
+{
+  "name": "uworeq",
+  "version": "1.0.0",
+  "description": "N/A",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test-scrape": "yarn ts-node ./coursescraper/scrape.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/namrapatel/uworeq.git"
+  },
+  "author": "Namra Patel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/namrapatel/uworeq/issues"
+  },
+  "homepage": "https://github.com/namrapatel/uworeq#readme",
+  "dependencies": {
+    "cheerio": "*",
+    "got-scraping": "^3.2.10"
+  }
+}
