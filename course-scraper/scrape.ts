@@ -12,38 +12,36 @@ async function getResponse() {
     return response;
 }
 
-
 async function getCourses() {
     const response = await getResponse();
     const html = response.body;
     const $ = cheerio.load(html);
 
     // Get URLs for each subject in the table
-    const subjectUrls = $("div.col-lg-12 tr td a").map((i, el) => $(el).attr("href")).get();
+    const subUrls = $("div.col-lg-12 tr td a").map((i, el) => $(el).attr("href")).get();
     
     // Concatenate westerncalendar.uwo.ca/ to each URL
-    const fullUrls = subjectUrls.map(url => "https://westerncalendar.uwo.ca/" + url);
+    const fullUrls = subUrls.map(url => "https://westerncalendar.uwo.ca/" + url);
 
-    // Get the name of each subject
-    const subjectNames = $("div.col-lg-12 tr td a").map((i, el) => $(el).text()).get();
-    console.log(subjectNames);
+    // Create an array of Courses and store the the fullUrls in the url property
+    const courses: Course[] = fullUrls.map(url => ({
+        name: "",
+        category: "",
+        url: url
+    }));
     
-    // console.log(fullUrls);
 
     $('.container').children().each(function (index, element) {
         $(element).find('tbody').children().each(function (index, element1) {
-            $(element1).find('td').each(function (index, element2) {
-                // console.log($(element2).text())
-            })
+            // Add name and category to the course array
+            courses[index].name = $(element1).find('td').eq(0).text().trim();
+            courses[index].category = $(element1).find('td').eq(1).text().trim();
         }
         );
     })
-
-    // Map fullUrls to course name and category
     
-
     // Get all courses info for each subject
+    console.log(courses);
 }
 
-
-console.log(await getCourses());
+console.log(getCourses())
