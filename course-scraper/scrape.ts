@@ -50,23 +50,26 @@ async function getCourses() {
         );
     })
     
-    var arr = []
     const moreDetails = await Promise.all(subjects.map(async course => {
-        const urls = []
         const response = await gotScraping('https://westerncalendar.uwo.ca/Courses.cfm?Subject=ACTURSCI&SelectedCalendar=Live&ArchiveID=');
         const html = response.body;
         const $ = cheerio.load(html);
 
         $('a:contains("More details")').each(function (index, element) {
-            arr.push($(element).attr('href'))
+            var subUrl = $(element).attr('href')
+            // Concatenate westerncalendar.uwo.ca/ to each URL
+            var fullUrl = "https://westerncalendar.uwo.ca/" + subUrl;
+            // add fullUrl to courses in subjects array
+            subjects[index].courses.push({
+                name: "",
+                category: "",
+                url: fullUrl,
+                credits: 0,
+                description: ""
+            }); 
         });
-
-        return urls;
     }));
-    console.log(arr)
-
-    // console.log(moreDetails)
-    // console.log(courses);
+    console.log(subjects[0].courses[0].url);
 }
 
 console.log(getCourses())
