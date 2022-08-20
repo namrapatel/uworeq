@@ -87,26 +87,22 @@ async function getCourses() {
             const $2 = cheerio.load(html2);
             
             // Find div with id CourseInformationDiv and get its last child's text
-            const courseWeight = $2('div#CourseInformationDiv').children().last().text();
-            
+            const courseInfo = $2('div#CourseInformationDiv').children().last().text();
+ 
             // Match text "Course Weight:" and get the number after the colon
-            const courseWeightMatch = courseWeight.match(/Course Weight: (\d+\.\d+)/);
-            // console.log(courseWeightMatch[0]);
+            const courseWeightMatch = courseInfo.match(/Course Weight: (\d+\.\d+)/);
             if (courseWeightMatch) {
-                console.log(courseWeightMatch[1]);
-                subjects[0].courses[0].courseWeight = parseInt(courseWeightMatch[1]);
+                subjects[0].courses[0].courseWeight = parseFloat(courseWeightMatch[1]);
             }
             
-            // Match text "Breadth:" and get the text after the colon
-            const breadthMatch = courseWeight.match(/Breadth: (.*)/);
-            if (breadthMatch) {
-                console.log("breadth1: "+breadthMatch[1]);
-                console.log("breadth0: "+breadthMatch[0])
-                subjects[0].courses[0].breadthCategory = breadthMatch[1];
-            }
+            // Match text "CATEGORY" and get letter after the whitespace
+            const categoryLetterMatch = courseInfo.match(/CATEGORY (\w)/);
+            if (categoryLetterMatch) {
+                subjects[0].courses[0].breadthCategory = categoryLetterMatch[0];
+            }    
 
             // Match text "Subject Code:" and get the text after the colon
-            const subjectCodeMatch = courseWeight.match(/Subject Code: (\w+)/);
+            const subjectCodeMatch = courseInfo.match(/Subject Code: (\w+)/);
             if (subjectCodeMatch) {
                 subjects[0].courses[0].formalSubjectName = subjectCodeMatch[1];
             }
