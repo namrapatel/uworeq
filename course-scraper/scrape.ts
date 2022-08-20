@@ -40,7 +40,7 @@ async function getCourses() {
         courses: []
     }));
     
-
+    // Get subject name and subject category for each subject in the table
     $('.container').children().each(function (index, element) {
         $(element).find('tbody').children().each(function (index, element1) {
             // Add name and category to the subjects array
@@ -49,27 +49,28 @@ async function getCourses() {
         }
         );
     })
-    
-    const moreDetails = await Promise.all(subjects.map(async course => {
-        const response = await gotScraping('https://westerncalendar.uwo.ca/Courses.cfm?Subject=ACTURSCI&SelectedCalendar=Live&ArchiveID=');
-        const html = response.body;
-        const $ = cheerio.load(html);
 
-        $('a:contains("More details")').each(function (index, element) {
+    for (var i = 0; i < subjects.length; i++) {
+        const response1 = await gotScraping(subjects[i].url);
+        const html1 = response1.body;
+        const $1 = cheerio.load(html1);
+
+        $1('a:contains("More details")').each(function (index, element) {
             var subUrl = $(element).attr('href')
+            
             // Concatenate westerncalendar.uwo.ca/ to each URL
             var fullUrl = "https://westerncalendar.uwo.ca/" + subUrl;
+            
             // add fullUrl to courses in subjects array
-            subjects[index].courses.push({
+            subjects[i].courses[index] = ({
                 name: "",
                 category: "",
                 url: fullUrl,
                 credits: 0,
                 description: ""
-            }); 
+            });
         });
-    }));
-    console.log(subjects[0].courses[0].url);
+    }
 }
 
 console.log(getCourses())
