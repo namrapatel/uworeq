@@ -1,10 +1,14 @@
-import { Subject, Course } from './types';
+import { Subject, Course } from '../src/types';
 import { createClient } from '@supabase/supabase-js';
 
 require('dotenv').config({ path: '../.env' })
 
-const supabaseUrl = 'https://uzimejpydlbynjhxkinq.supabase.co'
-const supabaseKey = process.env.SUPABASE_KEY
+// Init supabase client
+const supabaseUrl = 'https://uzimejpydlbynjhxkinq.supabase.co';
+var supabaseKey: string = "";
+if (process.env.SUPABASE_KEY) {
+     supabaseKey = process.env.SUPABASE_KEY
+}
 const supabase = createClient(supabaseUrl, supabaseKey)
 
 // INSERT A ROW
@@ -41,20 +45,20 @@ async function testInsert() {
 
 // READ A ROW
 async function testRead() {
-    const course: Course = null
     let { data: subjects, error } = await supabase
         .from('subjects')
         .select('name,courses')
+    if (subjects) {
+        subjects.forEach(subject => {
+            subject.courses.forEach(course => {
+                console.log(course.name)
+                console.log(course.breadthCategory)
+                console.log(course.url)
+                console.log(course.courseWeight)
+                console.log(course.formalSubjectName)
 
-    subjects.forEach(subject => {
-        subject.courses.forEach(course => {
-            console.log(course.name)
-            console.log(course.breadthCategory)
-            console.log(course.url)
-            console.log(course.courseWeight)
-            console.log(course.formalSubjectName)
-
-    })})
+        })});
+    }
 }
 
 console.log(

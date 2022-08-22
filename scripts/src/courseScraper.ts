@@ -3,31 +3,30 @@ import { Subject, Course } from "./types";
 import { gotScraping } from "got-scraping";
 import { createClient } from '@supabase/supabase-js';
 
-require('dotenv').config({ path: '../.env' })
+require('dotenv').config({ path: '../../.env' })
 
-const supabaseUrl = 'https://uzimejpydlbynjhxkinq.supabase.co'
-const supabaseKey = process.env.SUPABASE_KEY
+// Init supabase client
+const supabaseUrl = 'https://uzimejpydlbynjhxkinq.supabase.co';
+var supabaseKey: string = "";
+if (process.env.SUPABASE_KEY) {
+     supabaseKey = process.env.SUPABASE_KEY
+}
 const supabase = createClient(supabaseUrl, supabaseKey)
 
-async function getResponse() {
-    const response = await gotScraping("https://westerncalendar.uwo.ca/Courses.cfm?SelectedCalendar=Live&ArchiveID=");
-    return response;
-}
-
 // courseScraper v1, first & last scrape of the site was at 12:11AM on Monday August 22, 2022
-async function getCourses() {
-    const response = await getResponse();
+export const courses = async function getCourses(upload: boolean) {
+    const response = await gotScraping("https://westerncalendar.uwo.ca/Courses.cfm?SelectedCalendar=Live&ArchiveID=");
     const html = response.body;
     const $ = cheerio.load(html);
 
     // Get URLs for each subject in the table
-    const subUrls = $("div.col-lg-12 tr td a").map((i, el) => $(el).attr("href")).get();
+    const subUrls = $("div.col-lg-12 tr td a").map((el: any) => $(el).attr("href")).get();
     
     // Concatenate westerncalendar.uwo.ca/ to each URL
-    const fullUrls = subUrls.map(url => "https://westerncalendar.uwo.ca/" + url);
+    const fullUrls = subUrls.map((url: string) => "https://westerncalendar.uwo.ca/" + url);
 
     // Create an array of Subjects and store the the fullUrls in the url property
-    const subjects: Subject[] = fullUrls.map(url => ({
+    const subjects: Subject[] = fullUrls.map((url: string) => ({
         name: "",
         category: "",
         url: url,
@@ -35,8 +34,8 @@ async function getCourses() {
     }));
     
     // Get subject name and subject category for each subject in the table
-    $('.container').children().each(function (index, element) {
-        $(element).find('tbody').children().each(function (index, element1) {
+    $('.container').children().each(function (element: any) {
+        $(element).find('tbody').children().each(function (index: any, element1: any) {
             // Add name and category to the subjects array
             subjects[index].name = $(element1).find('td').eq(0).text().trim();
             subjects[index].category = $(element1).find('td').eq(1).text().trim();
@@ -50,7 +49,7 @@ async function getCourses() {
         const html1 = response1.body;
         const $1 = cheerio.load(html1);
 
-        $1('a:contains("More details")').each(function (index, element) {
+        $1('a:contains("More details")').each(function (index: any, element: any) {
             var subUrl = $(element).attr('href')
             
             // Concatenate westerncalendar.uwo.ca/ to each URL
@@ -59,7 +58,7 @@ async function getCourses() {
             // add fullUrl to courses in subjects array
             subjects[i].courses[index] = ({
                 name: "",
-                courseNumber: null,
+                courseNumber: 0,
                 courseLetter: "",
                 breadthCategory: "",
                 url: fullUrl,
@@ -70,8 +69,10 @@ async function getCourses() {
     }
 
     // Get course name, course category, course credits, and course description for each course in the course array
-
+    // TODO: my god clean this script this is disgusting with all the undefined checks 
+    var today = new Date();
     for (var i = 0; i < subjects.length; i++) {
+        console.log("Started scraping: " + subjects[i].name + " at " + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds());
         for (var j = 0; j < subjects[i].courses.length; j++) {
             const response2 = await gotScraping(subjects[i].courses[j].url);
             const html2 = response2.body;
@@ -105,35 +106,37 @@ async function getCourses() {
             // Split the preCourseNumber string into an array of strings
             const temp1 = preCourseNumber.split(" ");
             // Get the string that starts with a number from courseNumber array
-            const courseNumberString = temp1.find(string => /^\d+/.test(string));
-            // Get the first four chars of the courseNumberString
-            subjects[i].courses[j].courseNumber = parseInt(courseNumberString.substring(0, 4));
-            // Get everything except the first four chars of the courseNumberString
-            const courseLetter = courseNumberString.substring(4);
-            // Match all letters in courseLeter and put each in an array
-            const letters = courseLetter.match(/[a-zA-Z]+/g);
-            if (letters) {
-                subjects[i].courses[j].courseLetter = letters;
+            const courseNumberString = temp1.find((string: string) => /^\d+/.test(string));
+            if (courseNumberString) {
+                // Get the first four chars of the courseNumberString
+                subjects[i].courses[j].courseNumber = parseInt(courseNumberString.substring(0, 4));
+                // Get everything except the first four chars of the courseNumberString
+                const courseLetter = courseNumberString.substring(4);
+                // Match all letters in courseLeter and put each in an array
+                const letters = courseLetter.match(/[a-zA-Z]+/g);
+                if (letters) {
+                    subjects[i].courses[j].courseLetter = letters;
+                }
             }
         }
+        console.log("Finished scraping: " + subjects[i].name + " at " + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds());
     }
 
-    console.log("Finished scraping: ");
-    var today = new Date();
-    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    console.log(time)
+    console.log("Finished scraping: "+ today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds());
 
-    // POST subjects to supabase
-    for (var i = 0; i < subjects.length; i++) {
-        const { data, error } = await supabase
-        .from('subjects')
-        .insert([{ 
-            name: subjects[i].name, 
-            breadthCategory: subjects[i].category, 
-            url: subjects[i].url,
-            courses: subjects[i].courses },
-        ]);
+    if (upload) {
+        // POST subjects to supabase
+        for (var i = 0; i < subjects.length; i++) {
+            const { data, error } = await supabase
+            .from('subjects')
+            .insert([{ 
+                name: subjects[i].name, 
+                breadthCategory: subjects[i].category, 
+                url: subjects[i].url,
+                courses: subjects[i].courses },
+            ]);
+        }
     }
 }
 
-console.log(getCourses())
+console.log(courses(false))
