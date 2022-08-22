@@ -6,12 +6,10 @@ import { AppContext, stores } from "./AppContext";
 function App() {
 
   return (
-    <AppContext.Provider value={stores}>
       <div className="App">
         <Homepage />
       </div>
-    </AppContext.Provider>
   )
 }
 
-export default App
+export default App;

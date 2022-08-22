@@ -11,24 +11,11 @@ export const Homepage = observer(function(props: Props) {
   const subjects = applicationStore.subjects.map(subject => {
     return <li key={subject.name}>{subject.name}</li>;
   }).reverse();
-
-
-
-  // return a list item for each subject
-  // const subjectList: JSX.IntrinsicElements = applicationStore.subjects.forEach(subject => {
-  //   return (
-  //     <li key={subject.name}>
-  //       <a href={subject.url}>{subject.name}</a>
-  //     </li>
-  //   );
-  // });
     
+  console.log(applicationStore.initSubjects());
   return (
     <div>
-      <h1>Homepage</h1>
-      {subjects}
+      <div>{applicationStore.subjects[1].name}</div>
     </div>
   );
-
-
 });

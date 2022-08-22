@@ -2,8 +2,6 @@ import { Subject, Course } from "../types";
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
 import { makeAutoObservable, observable, action, autorun } from 'mobx';
 
-require('dotenv').config({ path: '../.env' })
-
 export class ApplicationStore {
   public subjects: Subject[];
   public completedCourses: Course[];
@@ -34,14 +32,11 @@ export class ApplicationStore {
 
   private initSupabase() {
       const supabaseUrl = 'https://uzimejpydlbynjhxkinq.supabase.co';
-      var supabaseKey: string = "";
-      if (process.env.SUPABASE_KEY) {
-          supabaseKey = process.env.SUPABASE_KEY
-      }
+      const supabaseKey: string = import.meta.env.VITE_SUPABASE_KEY;
       return createClient(supabaseUrl, supabaseKey)
   }
 
-  private async initSubjects() {
+  public async initSubjects() {
     let { data: subjects, error } = await this.supabaseClient
       .from('subjects')
       .select('*')
