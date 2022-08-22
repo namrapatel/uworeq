@@ -1,4 +1,4 @@
-import { gotScraping, Response } from "got-scraping";
+import { gotScraping } from "got-scraping";
 import cheerio from "cheerio";
 
 interface Course {
@@ -80,9 +80,9 @@ async function getCourses() {
 
     // Get course name, course category, course credits, and course description for each course in the course array
 
-    // for (var i = 0; i < subjects.length; i++) {
-    //     for (var j = 0; j < subjects[i].courses.length; j++) {
-            const response2 = await gotScraping("https://westerncalendar.uwo.ca/Courses.cfm?CourseAcadCalendarID=MAIN_022436_1&SelectedCalendar=Live&ArchiveID=");
+    for (var i = 0; i < 3; i++) {
+        for (var j = 0; j < subjects[i].courses.length; j++) {
+            const response2 = await gotScraping(subjects[i].courses[j].url);
             const html2 = response2.body;
             const $2 = cheerio.load(html2);
             
@@ -92,23 +92,23 @@ async function getCourses() {
             // Match text "Course Weight:" and get the number after the colon
             const courseWeightMatch = courseInfo.match(/Course Weight: (\d+\.\d+)/);
             if (courseWeightMatch) {
-                subjects[0].courses[0].courseWeight = parseFloat(courseWeightMatch[1]);
+                subjects[i].courses[j].courseWeight = parseFloat(courseWeightMatch[1]);
             }
             
             // Match text "CATEGORY" and get letter after the whitespace
             const categoryLetterMatch = courseInfo.match(/CATEGORY (\w)/);
             if (categoryLetterMatch) {
-                subjects[0].courses[0].breadthCategory = categoryLetterMatch[0];
+                subjects[i].courses[j].breadthCategory = categoryLetterMatch[0];
             }    
 
             // Match text "Subject Code:" and get the text after the colon
             const subjectCodeMatch = courseInfo.match(/Subject Code: (\w+)/);
             if (subjectCodeMatch) {
-                subjects[0].courses[0].formalSubjectName = subjectCodeMatch[1];
+                subjects[i].courses[j].formalSubjectName = subjectCodeMatch[1];
             }
 
             // Find div with id CourseInformationDiv and get the h3's text from within its first child
-            subjects[0].courses[0].name = $2('div#CourseInformationDiv > div.col-md-12 > h3').text();
+            subjects[i].courses[j].name = $2('div#CourseInformationDiv > div.col-md-12 > h3').text();
 
             const preCourseNumber = $2('div#CourseInformationDiv > div.col-md-12 > h2').text();
             // Split the preCourseNumber string into an array of strings
@@ -116,21 +116,21 @@ async function getCourses() {
             // Get the string that starts with a number from courseNumber array
             const courseNumberString = temp1.find(string => /^\d+/.test(string));
             // Get the first four chars of the courseNumberString
-            subjects[0].courses[0].courseNumber = parseInt(courseNumberString.substring(0, 4));
+            subjects[i].courses[j].courseNumber = parseInt(courseNumberString.substring(0, 4));
             // Get everything except the first four chars of the courseNumberString
             const courseLetter = courseNumberString.substring(4);
             // Match all letters in courseLeter and put each in an array
             const letters = courseLetter.match(/[a-zA-Z]+/g);
             if (letters) {
-                subjects[0].courses[0].courseLetter = letters;
+                subjects[i].courses[j].courseLetter = letters;
             }
-    //     }
-    // }
-    console.log(subjects[0].courses[0].name);
-    console.log(subjects[0].courses[0].courseLetter);
-    console.log(subjects[0].courses[0].courseNumber);
-    console.log(subjects[0].courses[0].courseWeight);
-    console.log(subjects[0].courses[0].breadthCategory);
+        }
+    }
+    console.log(subjects);
+    console.log(1)
+    console.log(subjects[2])
+    console.log(2)
+    console.log(subjects[2].courses[2])
 }
 
 console.log(getCourses())
