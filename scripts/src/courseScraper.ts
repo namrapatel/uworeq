@@ -14,19 +14,19 @@ if (process.env.SUPABASE_KEY) {
 const supabase = createClient(supabaseUrl, supabaseKey)
 
 // courseScraper v1, first & last scrape of the site was at 12:11AM on Monday August 22, 2022
-export const courses = async function getCourses(upload: boolean) {
+async function getCourses(upload: boolean) {
     const response = await gotScraping("https://westerncalendar.uwo.ca/Courses.cfm?SelectedCalendar=Live&ArchiveID=");
     const html = response.body;
     const $ = cheerio.load(html);
 
     // Get URLs for each subject in the table
-    const subUrls = $("div.col-lg-12 tr td a").map((el: any) => $(el).attr("href")).get();
-    
+    const subUrls = $("div.col-lg-12 tr td a").map((i, el) => $(el).attr("href")).get();
+
     // Concatenate westerncalendar.uwo.ca/ to each URL
-    const fullUrls = subUrls.map((url: string) => "https://westerncalendar.uwo.ca/" + url);
+    const fullUrls = subUrls.map((url) => "https://westerncalendar.uwo.ca/" + url);
 
     // Create an array of Subjects and store the the fullUrls in the url property
-    const subjects: Subject[] = fullUrls.map((url: string) => ({
+    const subjects: Subject[] = fullUrls.map((url) => ({
         name: "",
         category: "",
         url: url,
@@ -34,8 +34,9 @@ export const courses = async function getCourses(upload: boolean) {
     }));
     
     // Get subject name and subject category for each subject in the table
-    $('.container').children().each(function (element: any) {
-        $(element).find('tbody').children().each(function (index: any, element1: any) {
+    $('.container').children().each(function (index, element) {
+        $(element).find('tbody').children().each(function (index, element1) {
+
             // Add name and category to the subjects array
             subjects[index].name = $(element1).find('td').eq(0).text().trim();
             subjects[index].category = $(element1).find('td').eq(1).text().trim();
@@ -49,7 +50,7 @@ export const courses = async function getCourses(upload: boolean) {
         const html1 = response1.body;
         const $1 = cheerio.load(html1);
 
-        $1('a:contains("More details")').each(function (index: any, element: any) {
+        $1('a:contains("More details")').each(function (index, element) {
             var subUrl = $(element).attr('href')
             
             // Concatenate westerncalendar.uwo.ca/ to each URL
@@ -106,7 +107,7 @@ export const courses = async function getCourses(upload: boolean) {
             // Split the preCourseNumber string into an array of strings
             const temp1 = preCourseNumber.split(" ");
             // Get the string that starts with a number from courseNumber array
-            const courseNumberString = temp1.find((string: string) => /^\d+/.test(string));
+            const courseNumberString = temp1.find((string) => /^\d+/.test(string));
             if (courseNumberString) {
                 // Get the first four chars of the courseNumberString
                 subjects[i].courses[j].courseNumber = parseInt(courseNumberString.substring(0, 4));
@@ -139,4 +140,4 @@ export const courses = async function getCourses(upload: boolean) {
     }
 }
 
-console.log(courses(false))
+console.log(getCourses(false))
