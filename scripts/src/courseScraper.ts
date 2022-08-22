@@ -1,5 +1,5 @@
 import cheerio from "cheerio";
-import { Subject, Course } from "./types";
+import { Subject, Course } from "../../src/types";
 import { gotScraping } from "got-scraping";
 import { createClient } from '@supabase/supabase-js';
 
