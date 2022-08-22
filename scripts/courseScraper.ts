@@ -80,7 +80,7 @@ async function getCourses() {
 
     // Get course name, course category, course credits, and course description for each course in the course array
 
-    for (var i = 0; i < 3; i++) {
+    for (var i = 0; i < subjects.length; i++) {
         for (var j = 0; j < subjects[i].courses.length; j++) {
             const response2 = await gotScraping(subjects[i].courses[j].url);
             const html2 = response2.body;
@@ -126,11 +126,6 @@ async function getCourses() {
             }
         }
     }
-    console.log(subjects);
-    console.log(1)
-    console.log(subjects[2])
-    console.log(2)
-    console.log(subjects[2].courses[2])
 }
 
 console.log(getCourses())
