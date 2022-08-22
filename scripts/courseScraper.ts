@@ -1,23 +1,6 @@
-import { gotScraping } from "got-scraping";
 import cheerio from "cheerio";
-
-interface Course {
-    name: string;
-    courseNumber: number;
-    courseLetter: string[] | string;
-    breadthCategory: string;
-    url: string;
-    courseWeight: number;
-    formalSubjectName: string;
-
-}
-
-interface Subject {
-    name: string;
-    category: string;
-    url: string;
-    courses: Course[];
-}
+import { Subject, Course } from "./types";
+import { gotScraping } from "got-scraping";
 
 async function getResponse() {
     const response = await gotScraping("https://westerncalendar.uwo.ca/Courses.cfm?SelectedCalendar=Live&ArchiveID=");
