@@ -19,6 +19,7 @@ export class ApplicationStore {
     this.supabaseClient = this.initSupabase();
     this.subjects = [];
     this.completedCourses = [];
+    this.initSubjects();
   }
 
   public addCompletedCourse(course: Course) {
@@ -41,8 +42,10 @@ export class ApplicationStore {
       .from('subjects')
       .select('*')
     console.log(subjects);
-
-    return subjects;
+    if (subjects) {
+      for (let subject of subjects) {
+        this.subjects.push(subject);
+      }
+    }
   }
-
 }

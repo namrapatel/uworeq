@@ -12,10 +12,10 @@ export const Homepage = observer(function(props: Props) {
     return <li key={subject.name}>{subject.name}</li>;
   }).reverse();
     
-  console.log(applicationStore.initSubjects());
+
   return (
-    <div>
-      <div>{applicationStore.subjects[1].name}</div>
-    </div>
+      <div>
+        {subjects}
+      </div>
   );
 });
