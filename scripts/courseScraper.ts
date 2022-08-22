@@ -1,6 +1,13 @@
 import cheerio from "cheerio";
 import { Subject, Course } from "./types";
 import { gotScraping } from "got-scraping";
+import { createClient } from '@supabase/supabase-js';
+
+require('dotenv').config({ path: '../.env' })
+
+const supabaseUrl = 'https://uzimejpydlbynjhxkinq.supabase.co'
+const supabaseKey = process.env.SUPABASE_KEY
+const supabase = createClient(supabaseUrl, supabaseKey)
 
 async function getResponse() {
     const response = await gotScraping("https://westerncalendar.uwo.ca/Courses.cfm?SelectedCalendar=Live&ArchiveID=");
@@ -108,6 +115,23 @@ async function getCourses() {
                 subjects[i].courses[j].courseLetter = letters;
             }
         }
+    }
+
+    console.log("Finished scraping: ");
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    console.log(time)
+
+    // POST subjects to supabase
+    for (var i = 0; i < subjects.length; i++) {
+        const { data, error } = await supabase
+        .from('subjects')
+        .insert([{ 
+            name: subjects[i].name, 
+            breadthCategory: subjects[i].category, 
+            url: subjects[i].url,
+            courses: subjects[i].courses },
+        ]);
     }
 }
 
