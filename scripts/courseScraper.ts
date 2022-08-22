@@ -14,6 +14,7 @@ async function getResponse() {
     return response;
 }
 
+// courseScraper v1, first & last scrape of the site was at 12:11AM on Monday August 22, 2022
 async function getCourses() {
     const response = await getResponse();
     const html = response.body;
