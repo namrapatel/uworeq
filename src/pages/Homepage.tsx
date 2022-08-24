@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { AppContext } from "../AppContext";
 import styled from "styled-components";
 import { SubjectsPage } from "./SubjectsPage"; 
+import { CoursesPage } from "./CoursesPage";
 
 interface Props {}
 
@@ -10,18 +11,23 @@ export const HomePage = observer(function(props: Props) {
   const { applicationStore } = React.useContext(AppContext);
 
   return (
-      <div>
+      <Container>
         <PageContainer id="subjects">
           <SubjectsPage></SubjectsPage>
         </PageContainer>
-        <PageContainer id="courses"></PageContainer>
+        <PageContainer id="courses">
+          <CoursesPage></CoursesPage>
+        </PageContainer>
         <PageContainer id="results"></PageContainer>
-      </div>
+      </Container>
   );
 });
 
-const PageContainer = styled.div`
-  height: 100%;
-  width: 33%;
-  border: 1px solid black;
+const PageContainer = styled.div` 
+  border: 1px solid #000;
  ` 
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+`;

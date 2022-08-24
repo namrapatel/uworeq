@@ -15,10 +15,12 @@ export class ApplicationStore {
       {
         subjects: observable,
         completedCourses: observable,
-        addCompletedCourse: action,
-        removeCompletedCourse: action,
-        setSelectedSubject: action
+        selectedSubject: observable,
+        supabaseClient: observable,
+        setSelectedSubject: action,
+        handleCourseAdditionOrRemoval: action,
       });
+
     this.supabaseClient = this.initSupabase();
     this.subjects = [];
     this.completedCourses = [];
@@ -32,12 +34,20 @@ export class ApplicationStore {
     };
   }
 
-  public addCompletedCourse(course: Course) {
+  public handleCourseAdditionOrRemoval(course: Course) {
+    if (this.completedCourses.includes(course)) {
+      this.removeCompletedCourse(course);
+    } else {
+      this.addCompletedCourse(course);
+    }
+  }
+
+  private addCompletedCourse(course: Course) {
     this.completedCourses.push(course);
   }
 
   // TODO: test this method
-  public removeCompletedCourse(course: Course) {
+  private removeCompletedCourse(course: Course) {
     this.completedCourses.splice(this.completedCourses.indexOf(course), 1);
   }
 
@@ -56,7 +66,7 @@ export class ApplicationStore {
     let { data: subjects, error } = await this.supabaseClient
       .from('subjects')
       .select('*')
-    console.log(subjects);
+
     if (subjects) {
       for (let subject of subjects) {
         this.subjects.push(subject);

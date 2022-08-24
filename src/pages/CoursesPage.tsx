@@ -2,43 +2,33 @@ import { observer } from "mobx-react";
 import React, { useState } from "react";
 import { AppContext } from "../AppContext";
 import styled from "styled-components";
-import { Subject } from "../types";
+import { Course } from "../types";
 
 interface Props {}
 
 export const CoursesPage = observer(function(props: Props) {
     const { applicationStore } = React.useContext(AppContext);
-    const subjects = applicationStore.subjects;
-
-    const handleCheck = (subject: Subject) => {
-        if (applicationStore.selectedSubject === subject) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+    const courses: Course[] = applicationStore.selectedSubject.courses;
     
-    // Generate a list with a checkbox beside each item in the subjects array
-    const subjectItems = subjects.map(subject => {
+    const courseItems = courses.map(course => {
         return (
-            <SubjectItem key={subject.name}>
+            <CourseItem key={course.url}>
                 <input 
-                    onChange={() => applicationStore.setSelectedSubject(subject)}
-                    type="radio"
-                    checked={handleCheck(subject)} />
-                <span>{subject.name}</span>
-            </SubjectItem>
+                    onChange={() => applicationStore.handleCourseAdditionOrRemoval(course)}
+                    type="checkbox" />
+                <span>{course.name}</span>
+            </CourseItem>
         );
     });
 
     return (
         <div>
-            {subjectItems}
+            {courseItems}
         </div>
     );
 });
 
-const SubjectItem = styled.div`
+const CourseItem = styled.div`
     font-size: 1em;
     font-weight: 13;
     margin-bottom: 0.5em;
