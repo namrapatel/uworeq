@@ -16,7 +16,7 @@ export const Homepage = observer(function(props: Props) {
       <DropdownItem key={subject.name} onClick={() => {
         setButtonText(subject.name);
         applicationStore.setSelectedSubject(subject);
-      } }>{subject.name}</DropdownItem>
+      }}>{subject.name}</DropdownItem>
     );
   });
 
