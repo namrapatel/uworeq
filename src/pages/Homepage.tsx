@@ -2,17 +2,17 @@ import { observer } from "mobx-react";
 import React, { useState } from "react";
 import { AppContext } from "../AppContext";
 import styled from "styled-components";
-import { Subjectspage } from "./Subjectspage";
+import { SubjectsPage } from "./SubjectsPage"; 
 
 interface Props {}
 
-export const Homepage = observer(function(props: Props) {
+export const HomePage = observer(function(props: Props) {
   const { applicationStore } = React.useContext(AppContext);
 
   return (
       <div>
         <PageContainer id="subjects">
-          <Subjectspage></Subjectspage>
+          <SubjectsPage></SubjectsPage>
         </PageContainer>
         <PageContainer id="courses"></PageContainer>
         <PageContainer id="results"></PageContainer>
