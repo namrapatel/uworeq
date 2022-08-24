@@ -7,34 +7,18 @@ interface Props {}
 
 export const Homepage = observer(function(props: Props) {
   const { applicationStore } = React.useContext(AppContext);
-  const [buttonText, setButtonText] = useState("All subjects")
-  const subjects = applicationStore.subjects;
-
-  // Generate a DropdownItem for each subject in the subjects array
-  const subjectItems = subjects.map(subject => {
-    return (
-      <DropdownItem key={subject.name} onClick={() => {
-        setButtonText(subject.name);
-        applicationStore.setSelectedSubject(subject);
-      }}>{subject.name}</DropdownItem>
-    );
-  });
 
   return (
       <div>
-        <DropdownButton>{buttonText}</DropdownButton>
-        <DropdownMenu>
-          {subjectItems}
-        </DropdownMenu>
+        <PageContainer id="subjects"></PageContainer>
+        <PageContainer id="courses"></PageContainer>
+        <PageContainer id="results"></PageContainer>
       </div>
   );
 });
 
-const DropdownButton = styled.button`
-`
-
-const DropdownMenu = styled.div`
-`
-
-const DropdownItem = styled.button`
-`
+const PageContainer = styled.div`
+  height: 100%;
+  width: 33%;
+  border: 1px solid black;
+ ` 

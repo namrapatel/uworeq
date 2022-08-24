@@ -6,7 +6,7 @@ export class ApplicationStore {
   public subjects: Subject[];
   public completedCourses: Course[];
 
-  public selectedSubject: Subject | undefined;
+  public selectedSubject: Subject;
 
   public supabaseClient: SupabaseClient;
 
@@ -23,7 +23,13 @@ export class ApplicationStore {
     this.subjects = [];
     this.completedCourses = [];
     this.initSubjects();
-    this.selectedSubject = undefined
+    // Dummy subject
+    this.selectedSubject = {
+      name: 'All subjects',
+      courses: [],
+      category: '',
+      url: ''
+    };
   }
 
   public addCompletedCourse(course: Course) {
