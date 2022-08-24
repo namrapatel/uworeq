@@ -6,6 +6,8 @@ export class ApplicationStore {
   public subjects: Subject[];
   public completedCourses: Course[];
 
+  public selectedSubject: Subject | undefined;
+
   public supabaseClient: SupabaseClient;
 
   constructor() {
@@ -14,12 +16,14 @@ export class ApplicationStore {
         subjects: observable,
         completedCourses: observable,
         addCompletedCourse: action,
-        removeCompletedCourse: action
+        removeCompletedCourse: action,
+        setSelectedSubject: action
       });
     this.supabaseClient = this.initSupabase();
     this.subjects = [];
     this.completedCourses = [];
     this.initSubjects();
+    this.selectedSubject = undefined
   }
 
   public addCompletedCourse(course: Course) {
@@ -29,6 +33,10 @@ export class ApplicationStore {
   // TODO: test this method
   public removeCompletedCourse(course: Course) {
     this.completedCourses.splice(this.completedCourses.indexOf(course), 1);
+  }
+
+  public setSelectedSubject(subject: Subject) {
+    this.selectedSubject = subject;
   }
 
   private initSupabase() {
