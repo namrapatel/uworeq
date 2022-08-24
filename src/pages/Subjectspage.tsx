@@ -39,7 +39,7 @@ export const SubjectsPage = observer(function(props: Props) {
 });
 
 const SubjectItem = styled.div`
-    font-size: 1em;
+    font-size: 13;
     font-weight: 13;
     margin-bottom: 0.5em;
 `
