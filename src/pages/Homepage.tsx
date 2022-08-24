@@ -2,6 +2,7 @@ import { observer } from "mobx-react";
 import React, { useState } from "react";
 import { AppContext } from "../AppContext";
 import styled from "styled-components";
+import { Subjectspage } from "./Subjectspage";
 
 interface Props {}
 
@@ -10,7 +11,9 @@ export const Homepage = observer(function(props: Props) {
 
   return (
       <div>
-        <PageContainer id="subjects"></PageContainer>
+        <PageContainer id="subjects">
+          <Subjectspage></Subjectspage>
+        </PageContainer>
         <PageContainer id="courses"></PageContainer>
         <PageContainer id="results"></PageContainer>
       </div>

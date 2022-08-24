@@ -43,6 +43,7 @@ export class ApplicationStore {
 
   public setSelectedSubject(subject: Subject) {
     this.selectedSubject = subject;
+    console.log("Selected subject is: "+this.selectedSubject.name);
   }
 
   private initSupabase() {
