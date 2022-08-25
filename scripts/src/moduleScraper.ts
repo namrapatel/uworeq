@@ -43,4 +43,49 @@ async function getModules(upload: boolean) {
     });
 }
 
-getModules(false)
+var arr = []
+async function getModulesFromTable() {
+    const url = "https://www.westerncalendar.uwo.ca/Modules.cfm";
+    const response = await gotScraping(url);
+    const html = response.body;
+    const $ = cheerio.load(html);
+
+    // Get subject name and subject category for each subject in the table
+    // $('.container').children().each(function (index, element) {
+    //     $(element).find('tbody').children().each(function (index, element1) {
+            
+
+    //     }
+    //     );
+    // })
+
+    // $('a:contains("")').each(function (index, element) {
+    //     console.log($(element).children().last().attr("class"))
+    //     if ($(element).children().last().attr("class") === "img-responsive certificateIcon") {
+    //         var subUrl = $(element).attr('href')
+    //         if (subUrl)
+            
+    //         // Concatenate westerncalendar.uwo.ca/ to each URL
+    //         var fullUrl = "https://westerncalendar.uwo.ca/" + subUrl;
+            
+    //         // add fullUrl to courses in subjects array
+    //         arr[index] = fullUrl;
+    //     } 
+    // });
+
+    $('a:contains("")').each(function (index, element) {
+        if ($(element).attr('href').includes("Modules.cfm")) {
+            var subUrl = $(element).attr('href')
+
+            // Concatenate westerncalendar.uwo.ca/ to each URL
+            var fullUrl = "https://westerncalendar.uwo.ca/" + subUrl;
+            
+            // add fullUrl to courses in subjects array
+            arr.push(fullUrl);
+        } 
+    });
+
+    console.log(arr)
+}
+
+getModulesFromTable()
