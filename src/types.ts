@@ -15,3 +15,24 @@ export interface Subject {
     url: string;
     courses: Course[];
 }
+
+export interface PartialCourse {
+    courseName: string;
+    courseNumber: number;
+    courseLetter: string[] | string;
+}
+
+export interface RequirementsLine {
+    courses: number;
+    operator: string;
+    courseList: PartialCourse[];
+    subjectToLevelMapping: {   
+        subjectCode: string;
+        level: string;
+    }[];
+}
+
+export interface ModuleRequirements {
+    moduleName: string;
+    lines: RequirementsLine[];
+}
