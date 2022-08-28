@@ -4,53 +4,31 @@ import { ModuleRequirements, RequirementsLine, PartialCourse } from '../../src/t
 function parseModules() {
     const modules: ModuleRequirements[] = [];
 
-    // Loop through each key in jsonData
-    for (const key in jsonData) {
-        // Create a new module for each key
-        const module: ModuleRequirements = {
-            moduleName: jsonData[key],
-            lines: []
-        };
-        // Loop through each line in the module
-        for (const line in jsonData[key]) {
-            // Create a new RequirementsLine for each line
-            const requirementsLine: RequirementsLine = {
-                courses: jsonData[key][line].courses,
-                operator: jsonData[key][line].operator,
-                courseList: [],
-                subjectToLevelMapping: []
-            };
-            // Loop through each course in the line
-            for (const course in jsonData[key][line].courseList) {
-                // Create a new PartialCourse for each course
-                const partialCourse: PartialCourse = {
-                    courseName: jsonData[key][line].courseList[course].courseName,
-                    courseNumber: jsonData[key][line].courseList[course].courseNumber,
-                    courseLetter: jsonData[key][line].courseList[course].courseLetter
-                };
-                // Add the PartialCourse to the RequirementsLine
-                requirementsLine.courseList.push(partialCourse);
+    // Loop through the array in jsonData
+    for (const module of jsonData) {
+        const lines: RequirementsLine[] = [];
+        for (const line of module.lines) {
+            const courses: PartialCourse[] = [];
+            // Loop through the courses in the line
+            for (const course of line.courseList) {
+                courses.push({
+                    courseName: course.courseName,
+                    courseNumber: course.courseNumber,
+                    courseLetter: course.courseLetter
+                });
             }
-            // Loop through each subject in the line
-            for (const subject in jsonData[key][line].subjectToLevelMapping) {
-                // Create a new subjectToLevelMapping for each subject
-                const subjectToLevelMapping: {
-                    subjectCode: string;
-                    level: string;
-                } = {
-                    subjectCode: jsonData[key][line].subjectToLevelMapping[subject].subjectCode,
-                    level: jsonData[key][line].subjectToLevelMapping[subject].level
-                };
-                // Add the subjectToLevelMapping to the RequirementsLine
-                requirementsLine.subjectToLevelMapping.push(subjectToLevelMapping);
-            }
-            // Add the RequirementsLine to the module
-            module.lines.push(requirementsLine);
+            lines.push({
+                courses: line.courses,
+                operator: line.operator,
+                courseList: courses,
+                subjectToLevelMapping: line.subjectToLevelMapping
+            });
         }
-        modules.push(module);
+        modules.push({
+            moduleName: module.moduleName,
+            lines: lines
+        });
     }
-    console.log(modules[0].moduleName)
-    console.log(modules[0].lines[0])
 }
 
 parseModules();

@@ -29,7 +29,7 @@ export interface RequirementsLine {
     subjectToLevelMapping: {   
         subjectCode: string;
         level: string;
-    }[];
+    }[] | null;
 }
 
 export interface ModuleRequirements {
