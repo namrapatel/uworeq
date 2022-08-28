@@ -1,77 +1,554 @@
 [
   {
-      "moduleName": "MAJOR IN THE SOCIOLOGY OF POPULATION, AGING, AND HEALTH - admission discontinued",
+      "moduleName": "HONOURS SPECIALIZATION IN COMPUTER SCIENCE",
       "lines": [
         {
           "courses": "5.5", 
+          "operator": "AND", 
+          "courseList": [
+            {
+              "courseName": "COMPSCI",
+              "courseNumber": "2208",
+              "courseLetter": ["A", "B"]
+            },
+            {
+              "courseName": "COMPSCI",
+              "courseNumber": "2209",
+              "courseLetter": ["A", "B"]
+            },
+            {
+              "courseName": "COMPSCI",
+              "courseNumber": "2210",
+              "courseLetter": ["A", "B"]
+            },
+            {
+              "courseName": "COMPSCI",
+              "courseNumber": "2211",
+              "courseLetter": ["A", "B"]
+            },
+            {
+              "courseName": "COMPSCI",
+              "courseNumber": "2212",
+              "courseLetter": ["A", "B"]
+            },
+            {
+              "courseName": "COMPSCI",
+              "courseNumber": "3305",
+              "courseLetter": ["A", "B"]
+            },
+            {
+              "courseName": "COMPSCI",
+              "courseNumber": "3307",
+              "courseLetter": ["A", "B"]
+            },
+            {
+              "courseName": "COMPSCI",
+              "courseNumber": "3331",
+              "courseLetter": ["A", "B"]
+            },
+            {
+              "courseName": "COMPSCI",
+              "courseNumber": "3340",
+              "courseLetter": ["A", "B"]
+            },
+            {
+              "courseName": "COMPSCI",
+              "courseNumber": "3342",
+              "courseLetter": ["A", "B"]
+            },
+            {
+              "courseName": "COMPSCI",
+              "courseNumber": "3350",
+              "courseLetter": ["A", "B"]
+            }
+          ],
+          "subjectToLevelMapping": ""
+        },
+        {
+          "courses": "0.5", 
           "operator": "OR", 
           "courseList": [
             {
               "courseName": "COMPSCI",
-              "courseNumber": "3999",
+              "courseNumber": "2214",
+              "courseLetter": ["A", "B"]
+            },
+            {
+              "courseName": "MATH",
+              "courseNumber": "2155",
+              "courseLetter": ["F", "G"]
+            }
+          ],
+          "subjectToLevelMapping": ""
+        },
+        {
+          "courses": "0.5", 
+          "operator": "OR", 
+          "courseList": [
+            {
+              "courseName": "WRITING",
+              "courseNumber": "2101",
+              "courseLetter": ["F", "G"]
+            },
+            {
+              "courseName": "WRITING",
+              "courseNumber": "2111",
+              "courseLetter": ["F", "G"]
+            },
+            {
+              "courseName": "WRITING",
+              "courseNumber": "2125",
+              "courseLetter": ["F", "G"]
+            },
+            {
+              "courseName": "WRITING",
+              "courseNumber": "2131",
+              "courseLetter": ["F", "G"]
+            }
+          ],
+          "subjectToLevelMapping": ""
+        },
+        {
+          "courses": "0.5", 
+          "operator": "OR", 
+          "courseList": [
+            {
+              "courseName": "COMPSCI",
+              "courseNumber": "4490",
+              "courseLetter": ["Z"]
+            }
+          ],
+          "subjectToLevelMapping": ""
+        },
+        {
+          "courses": "1.0", 
+          "operator": "OR", 
+          "courseList": [
+            {
+              "courseName": "DATASCI",
+              "courseNumber": "3000",
               "courseLetter": ["A", "B"]
             }
           ],
-          "subjectToLevelMapping":[
+          "subjectToLevelMapping": [
             {
               "subjectCode": "COMPSCI",
-              "level": "3000+"
-            },
-            {
-              "subjectCode": "ENG",
-              "level": "2199-3000"
+              "level": "4000+"
             }
           ]
         },
         {
-          "courses": "1.5", 
-          "operator": "AND", 
+          "courses": "0.5", 
+          "operator": "OR", 
           "courseList": [
             {
-              "courseName": "COOLCLASS",
-              "courseNumber": "1299",
+              "courseName": "SCIENCE",
+              "courseNumber": "3377",
+              "courseLetter": ["A", "B"]
+            },
+            {
+              "courseName": "MATH",
+              "courseNumber": "2156",
+              "courseLetter": ["A", "B"]
+            },
+            {
+              "courseName": "MATH",
+              "courseNumber": "3159",
               "courseLetter": ["A", "B"]
             }
           ],
-          "subjectToLevelMapping": "null"
+          "subjectToLevelMapping": [
+            {
+              "subjectCode": "COMPSCI",
+              "level": "3000+"
+            }
+          ]
+        },
+        {
+          "courses": "0.5", 
+          "operator": "OR", 
+          "courseList": [
+            {
+              "courseName": "STATS",
+              "courseNumber": "2141",
+              "courseLetter": ["A", "B"]
+            },
+            {
+              "courseName": "STATS",
+              "courseNumber": "2244",
+              "courseLetter": ["A", "B"]
+            },
+            {
+              "courseName": "BIOLOGY",
+              "courseNumber": "2244",
+              "courseLetter": ["A", "B"]
+            },
+            {
+              "courseName": "STATS",
+              "courseNumber": "2857",
+              "courseLetter": ["A", "B"]
+            }
+          ],
+          "subjectToLevelMapping": ""
         }
       ]
   },
   {
-    "moduleName": "swagmajor",
+    "moduleName": "SPECIALIZATION IN COMPUTER SCIENCE",
     "lines": [
       {
-        "courses": "5.5", 
+        "courses": "5.0", 
+        "operator": "AND", 
+        "courseList": [
+          {
+            "courseName": "COMPSCI",
+            "courseNumber": "2208",
+            "courseLetter": ["A", "B"]
+          },
+          {
+            "courseName": "COMPSCI",
+            "courseNumber": "2209",
+            "courseLetter": ["A", "B"]
+          },
+          {
+            "courseName": "COMPSCI",
+            "courseNumber": "2210",
+            "courseLetter": ["A", "B"]
+          },
+          {
+            "courseName": "COMPSCI",
+            "courseNumber": "2211",
+            "courseLetter": ["A", "B"]
+          },
+          {
+            "courseName": "COMPSCI",
+            "courseNumber": "2212",
+            "courseLetter": ["A", "B"]
+          },
+          {
+            "courseName": "COMPSCI",
+            "courseNumber": "3305",
+            "courseLetter": ["A", "B"]
+          },
+          {
+            "courseName": "COMPSCI",
+            "courseNumber": "3307",
+            "courseLetter": ["A", "B"]
+          },
+          {
+            "courseName": "COMPSCI",
+            "courseNumber": "3331",
+            "courseLetter": ["A", "B"]
+          },
+          {
+            "courseName": "COMPSCI",
+            "courseNumber": "3342",
+            "courseLetter": ["A", "B"]
+          },
+          {
+            "courseName": "COMPSCI",
+            "courseNumber": "3350",
+            "courseLetter": ["A", "B"]
+          }
+        ],
+        "subjectToLevelMapping": ""
+      },
+      {
+        "courses": "0.5", 
         "operator": "OR", 
         "courseList": [
           {
             "courseName": "COMPSCI",
-            "courseNumber": "3999",
+            "courseNumber": "2214",
+            "courseLetter": ["A", "B"]
+          },
+          {
+            "courseName": "MATH",
+            "courseNumber": "2155",
+            "courseLetter": ["F", "G"]
+          }
+        ],
+        "subjectToLevelMapping": ""
+      },
+      {
+        "courses": "0.5", 
+        "operator": "OR", 
+        "courseList": [
+          {
+            "courseName": "WRITING",
+            "courseNumber": "2101",
+            "courseLetter": ["F", "G"]
+          },
+          {
+            "courseName": "WRITING",
+            "courseNumber": "2111",
+            "courseLetter": ["F", "G"]
+          },
+          {
+            "courseName": "WRITING",
+            "courseNumber": "2125",
+            "courseLetter": ["F", "G"]
+          },
+          {
+            "courseName": "WRITING",
+            "courseNumber": "2131",
+            "courseLetter": ["F", "G"]
+          }
+        ],
+        "subjectToLevelMapping": ""
+      },
+      {
+        "courses": "1.5", 
+        "operator": "OR", 
+        "courseList": [
+          {
+            "courseName": "DATASCI",
+            "courseNumber": "3000",
             "courseLetter": ["A", "B"]
           }
         ],
-        "subjectToLevelMapping":[
+        "subjectToLevelMapping": [
           {
             "subjectCode": "COMPSCI",
-            "level": "3000+"
-          },
-          {
-            "subjectCode": "ENG",
-            "level": "2199-3000"
+            "level": "4000+"
           }
         ]
       },
+      {
+        "courses": "1.0", 
+        "operator": "OR", 
+        "courseList": [
+          {
+            "courseName": "SCIENCE",
+            "courseNumber": "3377",
+            "courseLetter": ["A", "B"]
+          },
+          {
+            "courseName": "MATH",
+            "courseNumber": "2156",
+            "courseLetter": ["A", "B"]
+          },
+          {
+            "courseName": "MATH",
+            "courseNumber": "3159",
+            "courseLetter": ["A", "B"]
+          }
+        ],
+        "subjectToLevelMapping": [
+          {
+            "subjectCode": "COMPSCI",
+            "level": "3000+"
+          }
+        ]
+      },
+      {
+        "courses": "0.5", 
+        "operator": "OR", 
+        "courseList": [
+          {
+            "courseName": "STATS",
+            "courseNumber": "2141",
+            "courseLetter": ["A", "B"]
+          },
+          {
+            "courseName": "STATS",
+            "courseNumber": "2244",
+            "courseLetter": ["A", "B"]
+          },
+          {
+            "courseName": "BIOLOGY",
+            "courseNumber": "2244",
+            "courseLetter": ["A", "B"]
+          },
+          {
+            "courseName": "STATS",
+            "courseNumber": "2857",
+            "courseLetter": ["A", "B"]
+          }
+        ],
+        "subjectToLevelMapping": ""
+      }
+    ]
+  },
+  {
+    "moduleName": "MAJOR IN COMPUTER SCIENCE",
+    "lines": [
+      {
+        "courses": "3.5", 
+        "operator": "AND", 
+        "courseList": [
+          {
+            "courseName": "COMPSCI",
+            "courseNumber": "2208",
+            "courseLetter": ["A", "B"]
+          },
+          {
+            "courseName": "COMPSCI",
+            "courseNumber": "2209",
+            "courseLetter": ["A", "B"]
+          },
+          {
+            "courseName": "COMPSCI",
+            "courseNumber": "2210",
+            "courseLetter": ["A", "B"]
+          },
+          {
+            "courseName": "COMPSCI",
+            "courseNumber": "2211",
+            "courseLetter": ["A", "B"]
+          },
+          {
+            "courseName": "COMPSCI",
+            "courseNumber": "2212",
+            "courseLetter": ["A", "B"]
+          },
+          {
+            "courseName": "COMPSCI",
+            "courseNumber": "3305",
+            "courseLetter": ["A", "B"]
+          },
+          {
+            "courseName": "COMPSCI",
+            "courseNumber": "3307",
+            "courseLetter": ["A", "B"]
+          }
+        ],
+        "subjectToLevelMapping": ""
+      },
+      {
+        "courses": "0.5", 
+        "operator": "OR", 
+        "courseList": [
+          {
+            "courseName": "COMPSCI",
+            "courseNumber": "2214",
+            "courseLetter": ["A", "B"]
+          },
+          {
+            "courseName": "MATH",
+            "courseNumber": "2155",
+            "courseLetter": ["F", "G"]
+          }
+        ],
+        "subjectToLevelMapping": ""
+      },
+      {
+        "courses": "1.0", 
+        "operator": "OR", 
+        "courseList": [
+          {
+            "courseName": "SCIENCE",
+            "courseNumber": "3377",
+            "courseLetter": ["A", "B"]
+          },
+          {
+            "courseName": "MATH",
+            "courseNumber": "2156",
+            "courseLetter": ["A", "B"]
+          },
+          {
+            "courseName": "MATH",
+            "courseNumber": "3159",
+            "courseLetter": ["A", "B"]
+          },
+          {
+            "courseName": "DATASCI",
+            "courseNumber": "3000",
+            "courseLetter": ["A", "B"]
+          }
+        ],
+        "subjectToLevelMapping": [
+          {
+            "subjectCode": "COMPSCI",
+            "level": "3000+"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "moduleName": "MINOR IN COMPUTER SCIENCE",
+    "lines": [
       {
         "courses": "1.5", 
         "operator": "AND", 
         "courseList": [
           {
-            "courseName": "COOLCLASS",
-            "courseNumber": "1299",
+            "courseName": "COMPSCI",
+            "courseNumber": "2208",
+            "courseLetter": ["A", "B"]
+          },
+          {
+            "courseName": "COMPSCI",
+            "courseNumber": "2210",
+            "courseLetter": ["A", "B"]
+          },
+          {
+            "courseName": "COMPSCI",
+            "courseNumber": "2211",
             "courseLetter": ["A", "B"]
           }
         ],
-        "subjectToLevelMapping": "null"
+        "subjectToLevelMapping": ""
+      },
+      {
+        "courses": "0.5", 
+        "operator": "OR", 
+        "courseList": [
+          {
+            "courseName": "COMPSCI",
+            "courseNumber": "2214",
+            "courseLetter": ["A", "B"]
+          },
+          {
+            "courseName": "MATH",
+            "courseNumber": "2155",
+            "courseLetter": ["F", "G"]
+          }
+        ],
+        "subjectToLevelMapping": ""
+      },
+      {
+        "courses": "2.0", 
+        "operator": "OR", 
+        "courseList": [
+          {
+            "courseName": "COMPSCI",
+            "courseNumber": "2209",
+            "courseLetter": ["A", "B"]
+          },
+          {
+            "courseName": "COMPSCI",
+            "courseNumber": "2212",
+            "courseLetter": ["A", "B"]
+          },
+          {
+            "courseName": "SCIENCE",
+            "courseNumber": "3377",
+            "courseLetter": ["A", "B"]
+          },
+          {
+            "courseName": "MATH",
+            "courseNumber": "2156",
+            "courseLetter": ["A", "B"]
+          },
+          {
+            "courseName": "MATH",
+            "courseNumber": "3159",
+            "courseLetter": ["A", "B"]
+          },
+          {
+            "courseName": "DATASCI",
+            "courseNumber": "3000",
+            "courseLetter": ["A", "B"]
+          }
+        ],
+        "subjectToLevelMapping": [
+          {
+            "subjectCode": "COMPSCI",
+            "level": "3000+"
+          }
+        ]
       }
     ]
   }
