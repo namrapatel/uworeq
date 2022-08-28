@@ -1,7 +1,23 @@
-const jsonData = require('../data/modules.json');
+import { createClient } from '@supabase/supabase-js';
 import { ModuleRequirements, RequirementsLine, PartialCourse } from '../../src/types';
 
-function parseModules() {
+const jsonData = require('../data/modules.json');
+require('dotenv').config({ path: '../../.env' })
+
+// Init supabase client
+const supabaseUrl = 'https://uzimejpydlbynjhxkinq.supabase.co';
+var supabaseKey: string = "";
+if (process.env.SUPABASE_KEY) {
+     supabaseKey = process.env.SUPABASE_KEY
+}
+const supabase = createClient(supabaseUrl, supabaseKey)
+
+function moduleManager() {
+    const modules: ModuleRequirements[] = parseModules();
+    const postResult = postModules(modules);
+}
+
+function parseModules(): ModuleRequirements[] {
     const modules: ModuleRequirements[] = [];
 
     // Loop through the array in jsonData
@@ -29,11 +45,20 @@ function parseModules() {
             lines: lines
         });
     }
+
+    return modules;
 }
 
-parseModules();
+async function postModules(modules: ModuleRequirements[]) {
+    for (var i = 0; i < modules.length; i++) {
+        const { data, error } = await supabase
+        .from('modules')
+        .insert([{ 
+            moduleName: modules[i].moduleName, 
+            lines: modules[i].lines, 
+            },
+        ]);
+    }
+}
 
-
-// Parse modules from the JSON file
-// Store them in a local object
-// Insert the object into a Supabase table
+moduleManager();
