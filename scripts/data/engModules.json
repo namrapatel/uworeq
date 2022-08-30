@@ -1,0 +1,1289 @@
+[
+    {
+      "moduleName": "G. CHEMICAL ENGINEERING AND ARTIFICIAL INTELLIGENCE SYSTEMS ENGINEERING OPTION",
+        "lines": [
+          {
+            "courses": "6.5", 
+            "operator": "AND", 
+            "courseList": [
+                {
+                    "courseName": "ENGSCI",
+                    "courseNumber": "1050",
+                    "courseLetter": []
+                },
+                {
+                    "courseName": "BUSINESS",
+                    "courseNumber": "1299",
+                    "courseLetter": ["E"]
+                },
+                {
+                    "courseName": "ENGSCI",
+                    "courseNumber": "1022",
+                    "courseLetter": ["A", "B", "Y"]
+                },
+                {
+                    "courseName": "NMM",
+                    "courseNumber": "1411",
+                    "courseLetter": ["A", "B"]
+                },
+                {
+                    "courseName": "NMM",
+                    "courseNumber": "1412",
+                    "courseLetter": ["A", "B"]
+                },
+                {
+                    "courseName": "NMM",
+                    "courseNumber": "1414",
+                    "courseLetter": ["A", "B"]
+                },
+                {
+                    "courseName": "CHEM",
+                    "courseNumber": "1302",
+                    "courseLetter": ["A", "B"]
+                },
+                {
+                    "courseName": "ENGSCI",
+                    "courseNumber": "1021",
+                    "courseLetter": ["A", "B"]
+                },
+                {
+                    "courseName": "ENGSCI",
+                    "courseNumber": "1036",
+                    "courseLetter": ["A", "B"]
+                },
+                {
+                    "courseName": "PHYSICS",
+                    "courseNumber": "1401",
+                    "courseLetter": ["A", "B"]
+                },
+                {
+                    "courseName": "PHYSICS",
+                    "courseNumber": "1402",
+                    "courseLetter": ["A", "B"]
+                }
+            ],
+            "subjectToLevelMapping": ""
+          },
+          {
+            "courses": "6.0", 
+            "operator": "AND", 
+            "courseList": [
+                {
+                    "courseName": "NMM",
+                    "courseNumber": "2270",
+                    "courseLetter": ["A", "B"]
+                },
+                {
+                    "courseName": "NMM",
+                    "courseNumber": "2276",
+                    "courseLetter": ["A", "B"]
+                },
+                {
+                    "courseName": "CBE",
+                    "courseNumber": "2206",
+                    "courseLetter": ["A", "B"]
+                },
+                {
+                    "courseName": "CBE",
+                    "courseNumber": "2214",
+                    "courseLetter": ["A", "B"]
+                },
+                {
+                    "courseName": "CBE",
+                    "courseNumber": "2220",
+                    "courseLetter": ["A", "B"]
+                },
+                {
+                    "courseName": "CBE",
+                    "courseNumber": "2221",
+                    "courseLetter": ["A", "B"]
+                },
+                {
+                    "courseName": "CBE",
+                    "courseNumber": "2224",
+                    "courseLetter": ["A", "B"]
+                },
+                {
+                    "courseName": "CBE",
+                    "courseNumber": "2291",
+                    "courseLetter": ["A", "B"]
+                },
+                {
+                    "courseName": "STATS",
+                    "courseNumber": "2141",
+                    "courseLetter": ["A", "B"]
+                },
+                {
+                    "courseName": "SEE",
+                    "courseNumber": "2205",
+                    "courseLetter": ["A", "B"]
+                },
+                {
+                    "courseName": "SE",
+                    "courseNumber": "2251",
+                    "courseLetter": ["A", "B"]
+                },
+                {
+                    "courseName": "WRITING",
+                    "courseNumber": "2130",
+                    "courseLetter": ["F", "G"]
+                }
+            ],
+            "subjectToLevelMapping": ""
+          },
+          {
+            "courses": "6.0", 
+            "operator": "AND", 
+            "courseList": [
+                {
+                    "courseName": "CBE",
+                    "courseNumber": "2290",
+                    "courseLetter": ["A", "B"]
+                },
+                {
+                    "courseName": "CBE",
+                    "courseNumber": "3307",
+                    "courseLetter": ["A", "B"]
+                },
+                {
+                    "courseName": "CBE",
+                    "courseNumber": "3315",
+                    "courseLetter": ["A", "B"]
+                },
+                {
+                    "courseName": "CBE",
+                    "courseNumber": "2207",
+                    "courseLetter": ["A", "B"]
+                },
+                {
+                    "courseName": "CBE",
+                    "courseNumber": "3324",
+                    "courseLetter": ["A", "B"]
+                },
+                {
+                    "courseName": "CBE",
+                    "courseNumber": "3322",
+                    "courseLetter": ["A", "B"]
+                },
+                {
+                    "courseName": "CBE",
+                    "courseNumber": "3323",
+                    "courseLetter": ["A", "B"]
+                },
+                {
+                    "courseName": "ECE",
+                    "courseNumber": "3350",
+                    "courseLetter": ["A", "B"]
+                },
+                {
+                    "courseName": "ECE",
+                    "courseNumber": "3351",
+                    "courseLetter": ["A", "B"]
+                },
+                {
+                    "courseName": "DS",
+                    "courseNumber": "3000",
+                    "courseLetter": ["A", "B"]
+                },
+                {
+                    "courseName": "AISE",
+                    "courseNumber": "3010",
+                    "courseLetter": ["A", "B"]
+                },
+                {
+                    "courseName": "SE",
+                    "courseNumber": "3309",
+                    "courseLetter": ["A", "B"]
+                }
+            ],
+            "subjectToLevelMapping": ""
+          },
+          {
+            "courses": "5.0", 
+            "operator": "AND", 
+            "courseList": [
+              {
+                "courseName": "CBE",
+                "courseNumber": "3318",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CBE",
+                "courseNumber": "331",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CBE",
+                "courseNumber": "3395",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CBE",
+                "courseNumber": "3319",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "AISE",
+                "courseNumber": "3020",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "SE",
+                "courseNumber": "4430",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "AISE",
+                "courseNumber": "4010",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "AISE",
+                "courseNumber": "4020",
+                "courseLetter": ["A", "B"]
+              }
+            ],
+            "subjectToLevelMapping": [
+              {
+                "subjectCode": "AISE",
+                "level": "4000+"
+              },
+              {
+                "subjectCode": "NTE",
+                "level": "2000+"
+              }
+            ]
+          },
+          {
+            "courses": "4.5", 
+            "operator": "AND", 
+            "courseList": [
+              {
+                "courseName": "CBE",
+                "courseNumber": "3310",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "AISE",
+                "courseNumber": "4020",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "ECE",
+                "courseNumber": "4450",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "ELI",
+                "courseNumber": "4410",
+                "courseLetter": ["F"]
+              }
+            ],
+            "subjectToLevelMapping": [
+              {
+                "subjectCode": "1.0 CBE Tech Elective",
+    
+                "level": "1000+"
+              },
+              {
+                "subjectCode": "1.0 NTE",
+                "level": "2000+"
+              },
+              {
+                "subjectCode": "0.5 AISE tech eletive",
+                "level": "4000+"
+              }
+            ]
+          }
+        ]
+      },
+    
+    
+      {
+        "moduleName": "H. CIVIL ENGINEERING AND ARTIFICIAL INTELLIGENCE SYSTEMS ENGINEERING, SMART CITIES AND STRUCTURAL ENGINEERING OPTION",
+        "lines": [
+          {
+            "courses": "6.5", 
+            "operator": "AND", 
+            "courseList": [
+              {
+                "courseName": "ENGSCI",
+                "courseNumber": "1050",
+                "courseLetter": []
+              },
+              {
+                "courseName": "BUSINESS",
+                "courseNumber": "1299",
+                "courseLetter": ["E"]
+              },
+              {
+                "courseName": "ENGSCI",
+                "courseNumber": "1022",
+                "courseLetter": ["A", "B", "Y"]
+              },
+              {
+                "courseName": "NMM",
+                "courseNumber": "1411",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "NMM",
+                "courseNumber": "1412",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "NMM",
+                "courseNumber": "1414",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CHEM",
+                "courseNumber": "1302",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "ENGSCI",
+                "courseNumber": "1021",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "ENGSCI",
+                "courseNumber": "1036",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "PHYSICS",
+                "courseNumber": "1401",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "PHYSICS",
+                "courseNumber": "1402",
+                "courseLetter": ["A", "B"]
+              }
+            ],
+            "subjectToLevelMapping": ""
+          },
+          {
+            "courses": "6.0", 
+            "operator": "AND", 
+            "courseList": [
+              {
+                "courseName": "CEE",
+                "courseNumber": "2202",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "2217",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "2219",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "EARTHSCI",
+                "courseNumber": "2281",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "NMM",
+                "courseNumber": "2270",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "NMM",
+                "courseNumber": "2276",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "STATS",
+                "courseNumber": "2141",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "SEE",
+                "courseNumber": "2205",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "SE",
+                "courseNumber": "2251",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "WRITING",
+                "courseNumber": "2130",
+                "courseLetter": ["F", "G"]
+              }
+            ],
+            "subjectToLevelMapping": [
+              {
+                "subjectCode": "1.0 non techical elective",
+                "level": "2000+"
+              }
+            ]
+          },
+          {
+            "courses": "5.5", 
+            "operator": "AND", 
+            "courseList": [
+              {
+                "courseName": "CEE",
+                "courseNumber": "2220",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "2224",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "2221",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "3369",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "4401",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "DS",
+                "courseNumber": "3000",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "AISE",
+                "courseNumber": "3010",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "ECE",
+                "courseNumber": "3350",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "ECE",
+                "courseNumber": "3351",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "SE",
+                "courseNumber": "3309",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "SE",
+                "courseNumber": "4430",
+                "courseLetter": ["A", "B"]
+              }
+            ],
+            "subjectToLevelMapping": ""
+          },
+          {
+            "courses": "6.0", 
+            "operator": "AND", 
+            "courseList": [
+              {
+                "courseName": "CEE",
+                "courseNumber": "3321",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "3322",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "3340",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "3343",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "3344",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "3346",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "3347",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "3348",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "3358",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "AISE",
+                "courseNumber": "3020",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "AISE",
+                "courseNumber": "4010",
+                "courseLetter": ["A", "B"]
+              }
+            ],
+            "subjectToLevelMapping": [
+              {
+                "subjectCode": "0.5 non technical elective",
+                "level": "2000+"
+              }
+            ]
+          },
+          {
+            "courses": 0.5,
+            "operator": "OR",
+            "courseList": [
+              {
+                "courseName": "AISE",
+                "courseNumber": "4020",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "4412",
+                "courseLetter": ["A", "B"]
+              } 
+            ]
+          },
+          {
+            "courses": "5.0", 
+            "operator": "AND", 
+            "courseList": [
+              {
+                "courseName": "AISE",
+                "courseNumber": "4050",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "4426",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "4478",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "4491",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "ECE",
+                "courseNumber": "4413",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "4415",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "4420",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "ECE",
+                "courseNumber": "4450",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "ELI",
+                "courseNumber": "4410",
+                "courseLetter": ["F", "G"]
+              }
+            ],
+            "subjectToLevelMapping": [
+              {
+                "subjectCode": "0.5 non tech eletive",
+                "level": "2000+"
+              }
+            ]
+          }
+        ]
+      },
+    
+      {
+        "moduleName": "I. CIVIL ENGINEERING AND ARTIFICIAL INTELLIGENCE SYSTEMS ENGINEERING, SMART CITIES AND ENVIRONMENTAL ENGINEERING OPTION",
+        "lines": [
+          {
+            "courses": "6.5", 
+            "operator": "AND", 
+            "courseList": [
+              {
+                "courseName": "ENGSCI",
+                "courseNumber": "1050",
+                "courseLetter": []
+              },
+              {
+                "courseName": "BUSINESS",
+                "courseNumber": "1299",
+                "courseLetter": ["E"]
+              },
+              {
+                "courseName": "ENGSCI",
+                "courseNumber": "1022",
+                "courseLetter": ["A", "B", "Y"]
+              },
+              {
+                "courseName": "NMM",
+                "courseNumber": "1411",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "NMM",
+                "courseNumber": "1412",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "NMM",
+                "courseNumber": "1414",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CHEM",
+                "courseNumber": "1302",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "ENGSCI",
+                "courseNumber": "1021",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "ENGSCI",
+                "courseNumber": "1036",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "PHYSICS",
+                "courseNumber": "1401",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "PHYSICS",
+                "courseNumber": "1402",
+                "courseLetter": ["A", "B"]
+              }
+            ],
+            "subjectToLevelMapping": ""
+          },
+          {
+            "courses": "6.0", 
+            "operator": "AND", 
+            "courseList": [
+              {
+                "courseName": "CEE",
+                "courseNumber": "2202",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "2217",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "2219",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "EARTHSCI",
+                "courseNumber": "2281",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "NMM",
+                "courseNumber": "2270",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "NMM",
+                "courseNumber": "2276",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "STATS",
+                "courseNumber": "2141",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "SEE",
+                "courseNumber": "2205",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "SE",
+                "courseNumber": "2251",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "WRITING",
+                "courseNumber": "2130",
+                "courseLetter": ["F", "G"]
+              }
+            ],
+            "subjectToLevelMapping": [
+              {
+                "subjectCode": "1.0 non techical elective",
+                "level": "2000+"
+              }
+            ]
+          },
+          {
+            "courses": "5.5", 
+            "operator": "AND", 
+            "courseList": [
+              {
+                "courseName": "CEE",
+                "courseNumber": "2220",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "2224",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "2221",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "3369",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "4401",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "DS",
+                "courseNumber": "3000",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "AISE",
+                "courseNumber": "3010",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "ECE",
+                "courseNumber": "3350",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "ECE",
+                "courseNumber": "3351",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "SE",
+                "courseNumber": "3309",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "SE",
+                "courseNumber": "4430",
+                "courseLetter": ["A", "B"]
+              }
+            ],
+            "subjectToLevelMapping": ""
+          },
+          {
+            "courses": "6.0", 
+            "operator": "AND", 
+            "courseList": [
+              {
+                "courseName": "CEE",
+                "courseNumber": "3321",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "3322",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "3348",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "3355",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "3362",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "3386",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "4476",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "4409",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "AISE",
+                "courseNumber": "3020",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "AISE",
+                "courseNumber": "4010",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "EARTHSCI",
+                "courseNumber": "3340",
+                "courseLetter": ["A", "B"]
+              }
+            ],
+            "subjectToLevelMapping": [
+              {
+                "subjectCode": "0.5 non technical elective",
+                "level": "2000+"
+              }
+            ]
+          },
+          {
+            "courses": 0.5,
+            "operator": "OR",
+            "courseList": [
+              {
+                "courseName": "AISE",
+                "courseNumber": "4020",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "4412",
+                "courseLetter": ["A", "B"]
+              } 
+            ]
+          },
+          {
+            "courses": "5.0", 
+            "operator": "AND", 
+            "courseList": [
+              {
+                "courseName": "AISE",
+                "courseNumber": "4050",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "4426",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "4463",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "4465",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "ECE",
+                "courseNumber": "4478",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "6",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CEE",
+                "courseNumber": "4418",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "ECE",
+                "courseNumber": "4450",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "ELI",
+                "courseNumber": "4410",
+                "courseLetter": ["F"]
+              }
+            ],
+            "subjectToLevelMapping": [
+              {
+                "subjectCode": "0.5 tech eletive",
+                "level": "2000+"
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "moduleName": "M. ELECTRICAL ENGINEERING AND ARTIFICIAL INTELLIGENCE SYSTEMS ENGINEERING OPTION",
+        "lines": [
+          {
+            "courses": "6.5", 
+            "operator": "AND", 
+            "courseList": [
+              {
+                "courseName": "ENGSCI",
+                "courseNumber": "1050",
+                "courseLetter": []
+              },
+              {
+                "courseName": "BUSINESS",
+                "courseNumber": "1299",
+                "courseLetter": ["E"]
+              },
+              {
+                "courseName": "ENGSCI",
+                "courseNumber": "1022",
+                "courseLetter": ["A", "B", "Y"]
+              },
+              {
+                "courseName": "NMM",
+                "courseNumber": "1411",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "NMM",
+                "courseNumber": "1412",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "NMM",
+                "courseNumber": "1414",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "CHEM",
+                "courseNumber": "1302",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "ENGSCI",
+                "courseNumber": "1021",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "ENGSCI",
+                "courseNumber": "1036",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "PHYSICS",
+                "courseNumber": "1401",
+                "courseLetter": ["A", "B"]
+              },
+              {
+                "courseName": "PHYSICS",
+                "courseNumber": "1402",
+                "courseLetter": ["A", "B"]
+                }
+            ],
+            "subjectToLevelMapping": ""
+          },
+          {
+            "courses": "6.0", 
+            "operator": "AND", 
+            "courseList": [
+                {
+            "courseName": "ECE",
+            "courseNumber": "2205",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "ECE",
+            "courseNumber": "2233",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "ECE",
+            "courseNumber": "2236",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "ECE",
+            "courseNumber": "2240",
+            "courseLetter": ["A", "B"]
+            },
+            {
+                
+            }
+    
+            {
+            "courseName": "STATS",
+            "courseNumber": "2177",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "SEE",
+            "courseNumber": "2205",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "SE",
+            "courseNumber": "2251",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "WRITING",
+            "courseNumber": "2130",
+            "courseLetter": ["F", "G"]
+            }
+        ],
+        "subjectToLevelMapping": [
+            
+        ]
+        },
+        {
+        "courses": "5.5", 
+        "operator": "AND", 
+        "courseList": [
+            {
+            "courseName": "CEE",
+            "courseNumber": "2220",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "CEE",
+            "courseNumber": "2224",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "CEE",
+            "courseNumber": "2221",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "CEE",
+            "courseNumber": "3369",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "CEE",
+            "courseNumber": "4401",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "DS",
+            "courseNumber": "3000",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "AISE",
+            "courseNumber": "3010",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "ECE",
+            "courseNumber": "3350",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "ECE",
+            "courseNumber": "3351",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "SE",
+            "courseNumber": "3309",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "SE",
+            "courseNumber": "4430",
+            "courseLetter": ["A", "B"]
+            }
+        ],
+        "subjectToLevelMapping": ""
+        },
+        {
+        "courses": "6.0", 
+        "operator": "AND", 
+        "courseList": [
+            {
+            "courseName": "CEE",
+            "courseNumber": "3321",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "CEE",
+            "courseNumber": "3322",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "CEE",
+            "courseNumber": "3348",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "CEE",
+            "courseNumber": "3355",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "CEE",
+            "courseNumber": "3362",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "CEE",
+            "courseNumber": "3386",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "CEE",
+            "courseNumber": "4476",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "CEE",
+            "courseNumber": "4409",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "AISE",
+            "courseNumber": "3020",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "AISE",
+            "courseNumber": "4010",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "EARTHSCI",
+            "courseNumber": "3340",
+            "courseLetter": ["A", "B"]
+            }
+        ],
+        "subjectToLevelMapping": [
+            {
+            "subjectCode": "0.5 non technical elective",
+            "level": "2000+"
+            }
+        ]
+        },
+        {
+        "courses": 0.5,
+        "operator": "OR",
+        "courseList": [
+            {
+            "courseName": "AISE",
+            "courseNumber": "4020",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "CEE",
+            "courseNumber": "4412",
+            "courseLetter": ["A", "B"]
+            } 
+        ]
+        },
+        {
+        "courses": "5.0", 
+        "operator": "AND", 
+        "courseList": [
+            {
+            "courseName": "AISE",
+            "courseNumber": "4050",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "CEE",
+            "courseNumber": "4426",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "CEE",
+            "courseNumber": "4463",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "CEE",
+            "courseNumber": "4465",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "ECE",
+            "courseNumber": "4478",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "CEE",
+            "courseNumber": "6",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "CEE",
+            "courseNumber": "4418",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "ECE",
+            "courseNumber": "4450",
+            "courseLetter": ["A", "B"]
+            },
+            {
+            "courseName": "ELI",
+            "courseNumber": "4410",
+            "courseLetter": ["F"]
+            }
+            ],
+            "subjectToLevelMapping": [
+              {
+                "subjectCode": "0.5 tech eletive",
+                "level": "2000+"
+              }
+            ]
+          }
+        ]
+      }
+
+]
