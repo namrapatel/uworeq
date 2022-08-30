@@ -18,18 +18,11 @@ export function buildRequirements(moduleRequirements: ModuleRequirements): Requi
     } else {
         // If not an Engineering module, set generalRequirements to first 
         // item in generalRequirementsData, which is the "General" module
-        console.log(generalRequirementsData[0].moduleName);
         generalRequirements = generalRequirementsData[0];
     }
 
     requirements.moduleRequirements = moduleRequirements;
     requirements.generalRequirements = generalRequirements;
-    
+
     return requirements;
 }
-
-const testModule: ModuleRequirements = {
-    moduleName: "ENGINEERING COMPUTER SCIENCE",
-    lines: []
-}
-buildRequirements(testModule);
