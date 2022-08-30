@@ -1,3 +1,4 @@
+// General Types
 export interface Course {
     name: string;
     courseNumber: number;
@@ -16,6 +17,12 @@ export interface Subject {
     courses: Course[];
 }
 
+export interface Requirements {
+    generalRequirements: GeneralRequirements;
+    moduleRequirements: ModuleRequirements[];
+}
+
+// Module Requirements Types
 export interface PartialCourse {
     courseName: string;
     courseNumber: number;
@@ -23,7 +30,7 @@ export interface PartialCourse {
 }
 
 export interface RequirementsLine {
-    courses: number;
+    courses: ;
     operator: string;
     courseList: PartialCourse[];
     subjectToLevelMapping: {   
@@ -35,4 +42,16 @@ export interface RequirementsLine {
 export interface ModuleRequirements {
     moduleName: string;
     lines: RequirementsLine[];
+}
+
+// General Requirements Types
+export interface GeneralRequirements {
+    moduleName: string;
+    requirements: GeneralRequirementLine[] | GeneralRequirementLine;
+}
+
+export interface GeneralRequirementLine {
+    courses: number;
+    operator: string;
+    category: string[] | string;
 }
