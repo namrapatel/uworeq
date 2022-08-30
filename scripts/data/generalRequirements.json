@@ -1,0 +1,32 @@
+[
+    {
+        "moduleName": "General",
+        "requirements": [
+            {
+                "courses": 1.0,
+                "operator": "OR",
+                "category": "A"
+            },
+            {
+                "courses": 1.0,
+                "operator": "OR",
+                "category": "B"
+            },
+            {
+                "courses": 1.0,
+                "operator": "OR",
+                "category": "C"
+            }
+        ]
+    },
+    {
+        "moduleName": "Fake Chem Eng",
+        "requirements": [
+            {
+                "courses": 1.5,
+                "operator": "OR",
+                "category": ["A", "B"]
+            }
+        ]
+    }
+]
