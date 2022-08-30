@@ -7,7 +7,6 @@ export interface Course {
     url: string;
     courseWeight: number;
     formalSubjectName: string;
-
 }
 
 export interface Subject {
@@ -19,7 +18,7 @@ export interface Subject {
 
 export interface Requirements {
     generalRequirements: GeneralRequirements;
-    moduleRequirements: ModuleRequirements[];
+    moduleRequirements: ModuleRequirements;
 }
 
 // Module Requirements Types
