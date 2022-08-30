@@ -30,7 +30,7 @@ export interface PartialCourse {
 }
 
 export interface RequirementsLine {
-    courses: ;
+    courses: number;
     operator: string;
     courseList: PartialCourse[];
     subjectToLevelMapping: {   
