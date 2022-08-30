@@ -3,7 +3,7 @@
     "moduleName": "HONOURS SPECIALIZATION IN COMPUTER SCIENCE",
     "lines": [
       {
-        "courses": "5.5", 
+        "courses": 5.5, 
         "operator": "AND", 
         "courseList": [
           {
@@ -65,7 +65,7 @@
         "subjectToLevelMapping": ""
       },
       {
-        "courses": "0.5", 
+        "courses": 0.5, 
         "operator": "OR", 
         "courseList": [
           {
@@ -82,7 +82,7 @@
         "subjectToLevelMapping": ""
       },
       {
-        "courses": "0.5", 
+        "courses": 0.5, 
         "operator": "OR", 
         "courseList": [
           {
@@ -109,7 +109,7 @@
         "subjectToLevelMapping": ""
       },
       {
-        "courses": "0.5", 
+        "courses": 0.5, 
         "operator": "OR", 
         "courseList": [
           {
@@ -121,7 +121,7 @@
         "subjectToLevelMapping": ""
       },
       {
-        "courses": "1.0", 
+        "courses": 1.0, 
         "operator": "OR", 
         "courseList": [
           {
@@ -138,7 +138,7 @@
         ]
       },
       {
-        "courses": "0.5", 
+        "courses": 0.5, 
         "operator": "OR", 
         "courseList": [
           {
@@ -165,7 +165,7 @@
         ]
       },
       {
-        "courses": "0.5", 
+        "courses": 0.5, 
         "operator": "OR", 
         "courseList": [
           {
@@ -197,7 +197,7 @@
     "moduleName": "SPECIALIZATION IN COMPUTER SCIENCE",
     "lines": [
       {
-        "courses": "5.0", 
+        "courses": 5.0, 
         "operator": "AND", 
         "courseList": [
           {
@@ -254,7 +254,7 @@
         "subjectToLevelMapping": ""
       },
       {
-        "courses": "0.5", 
+        "courses": 0.5, 
         "operator": "OR", 
         "courseList": [
           {
@@ -271,7 +271,7 @@
         "subjectToLevelMapping": ""
       },
       {
-        "courses": "0.5", 
+        "courses": 0.5, 
         "operator": "OR", 
         "courseList": [
           {
@@ -298,7 +298,7 @@
         "subjectToLevelMapping": ""
       },
       {
-        "courses": "1.5", 
+        "courses": 1.5, 
         "operator": "OR", 
         "courseList": [
           {
@@ -315,7 +315,7 @@
         ]
       },
       {
-        "courses": "1.0", 
+        "courses": 1.0, 
         "operator": "OR", 
         "courseList": [
           {
@@ -342,7 +342,7 @@
         ]
       },
       {
-        "courses": "0.5", 
+        "courses": 0.5, 
         "operator": "OR", 
         "courseList": [
           {
@@ -374,7 +374,7 @@
     "moduleName": "MAJOR IN COMPUTER SCIENCE",
     "lines": [
       {
-        "courses": "3.5", 
+        "courses": 3.5, 
         "operator": "AND", 
         "courseList": [
           {
@@ -416,7 +416,7 @@
         "subjectToLevelMapping": ""
       },
       {
-        "courses": "0.5", 
+        "courses": 0.5, 
         "operator": "OR", 
         "courseList": [
           {
@@ -433,7 +433,7 @@
         "subjectToLevelMapping": ""
       },
       {
-        "courses": "1.0", 
+        "courses": 1.0, 
         "operator": "OR", 
         "courseList": [
           {
@@ -470,7 +470,7 @@
     "moduleName": "MINOR IN COMPUTER SCIENCE",
     "lines": [
       {
-        "courses": "1.5", 
+        "courses": 1.5, 
         "operator": "AND", 
         "courseList": [
           {
@@ -492,7 +492,7 @@
         "subjectToLevelMapping": ""
       },
       {
-        "courses": "0.5", 
+        "courses": 0.5, 
         "operator": "OR", 
         "courseList": [
           {
@@ -509,7 +509,7 @@
         "subjectToLevelMapping": ""
       },
       {
-        "courses": "2.0", 
+        "courses": 2.0, 
         "operator": "OR", 
         "courseList": [
           {
