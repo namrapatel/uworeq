@@ -1,7 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 import { ModuleRequirements, RequirementsLine, PartialCourse } from '../../src/types';
 
-const jsonData = require('../data/modules.json');
+const jsonData = require('../data/moduleRequirements.json');
 require('dotenv').config({ path: '../../.env' })
 
 // Init supabase client

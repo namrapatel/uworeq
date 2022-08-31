@@ -1,8 +1,8 @@
 import { ModuleRequirements, GeneralRequirements, Requirements } from "../types";
-
-const generalRequirementsData: GeneralRequirements[] = require("../../scripts/data/generalRequirements.json");
+import * as generalRequirementsData from "../../scripts/data/generalRequirements.json" assert {type: "json"};
 
 export function buildRequirements(moduleRequirements: ModuleRequirements): Requirements {
+    console.log(generalRequirementsData)
     var requirements: Requirements = {} as Requirements;
     var generalRequirements: GeneralRequirements = {} as GeneralRequirements;
     

@@ -1,12 +1,17 @@
-import { Subject, Course } from "../types";
+import { Subject, Course, Requirements, ModuleRequirements } from "../types";
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
 import { makeAutoObservable, observable, action, autorun } from 'mobx';
+import { checkModRequirementsMatch, checkGenRequirementsMatch } from "../backend/requirementsChecker";
+import { buildRequirements } from "../backend/requirementsBuilder";
 
 export class ApplicationStore {
   public subjects: Subject[];
   public completedCourses: Course[];
+  public completedAndUnmatchedCourses: Course[];
+  public generalRequirementsMatchedCourses: Course[];
+  public requirements: Requirements | null;
 
-  public selectedSubject: Subject;
+  public selectedSubject: Subject; // TODO: Move this to UIStateStore
 
   public supabaseClient: SupabaseClient;
 
@@ -15,6 +20,9 @@ export class ApplicationStore {
       {
         subjects: observable,
         completedCourses: observable,
+        completedAndUnmatchedCourses: observable,
+        generalRequirementsMatchedCourses: observable,
+        requirements: observable,
         selectedSubject: observable,
         supabaseClient: observable,
         setSelectedSubject: action,
@@ -23,7 +31,10 @@ export class ApplicationStore {
 
     this.supabaseClient = this.initSupabase();
     this.subjects = [];
+    this.requirements = null;
     this.completedCourses = [];
+    this.completedAndUnmatchedCourses = [];
+    this.generalRequirementsMatchedCourses = [];
     this.initSubjects();
     // Dummy subject
     this.selectedSubject = {
@@ -35,7 +46,7 @@ export class ApplicationStore {
   }
 
   public handleCourseAdditionOrRemoval(course: Course) {
-    if (this.completedCourses.includes(course)) {
+    if (this.completedCourses.includes(course) || this.completedAndUnmatchedCourses.includes(course) || this.generalRequirementsMatchedCourses.includes(course)) {
       this.removeCompletedCourse(course);
     } else {
       this.addCompletedCourse(course);
@@ -43,12 +54,62 @@ export class ApplicationStore {
   }
 
   private addCompletedCourse(course: Course) {
-    this.completedCourses.push(course);
+    if (this.requirements !== null) {
+      const [newRequirements, matched] = checkModRequirementsMatch(course, this.requirements, "add");
+      if (matched) {
+        this.completedCourses.push(course);
+      } else {
+        this.completedAndUnmatchedCourses.push(course);
+      }
+      this.requirements = newRequirements;
+    }
   }
 
   // TODO: test this method
   private removeCompletedCourse(course: Course) {
-    this.completedCourses.splice(this.completedCourses.indexOf(course), 1);
+    if (this.requirements !== null) {
+      if (this.completedCourses.includes(course)) {
+        this.completedCourses.splice(this.completedCourses.indexOf(course), 1);
+        const [newRequirements, matched] =  checkModRequirementsMatch(course, this.requirements, "remove");
+        if (matched) { // TODO: is this a redundant check due to the .includes check?
+          this.requirements = newRequirements;
+        }
+      } else if (this.completedAndUnmatchedCourses.includes(course)) {
+        this.completedAndUnmatchedCourses.splice(this.completedAndUnmatchedCourses.indexOf(course), 1);
+        const [newRequirements, matched] =  checkModRequirementsMatch(course, this.requirements, "remove");
+        if (matched) { // TODO: is this a redundant check due to the .includes check?
+          this.requirements = newRequirements;
+        }
+      } else if (this.generalRequirementsMatchedCourses.includes(course)) {
+        this.generalRequirementsMatchedCourses.splice(this.generalRequirementsMatchedCourses.indexOf(course), 1);
+        const [newRequirements, matched] = checkGenRequirementsMatch(course, this.requirements, "remove");
+        if (matched) { // TODO: is this a redundant check due to the .includes check?
+          this.requirements = newRequirements;
+        }
+      }
+    }
+  }
+
+  // onSubmit, check all courses that haven't been matched, against GeneralRequirements
+  public submitCoursesForCheck() {
+    if (this.requirements !== null) {
+      for (let course of this.completedAndUnmatchedCourses) {
+        const [newRequirements, matched] = checkGenRequirementsMatch(course, this.requirements, "add"); 
+        if (matched) {
+          this.generalRequirementsMatchedCourses.push(course);
+          this.completedAndUnmatchedCourses.splice(this.completedAndUnmatchedCourses.indexOf(course), 1);
+          this.requirements = newRequirements;
+        }
+      }
+    }
+  }
+
+  public initRequirements(moduleRequirements: ModuleRequirements) {
+    this.requirements = buildRequirements(moduleRequirements);
+  }
+
+  public setRequirements(requirements: Requirements) {
+    this.requirements = requirements;
   }
 
   public setSelectedSubject(subject: Subject) {
