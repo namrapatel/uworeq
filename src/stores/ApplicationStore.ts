@@ -6,7 +6,7 @@ export class ApplicationStore {
   public subjects: Subject[];
   public completedCourses: Course[];
 
-  public selectedSubject: Subject;
+  public selectedSubject: Subject; // TODO: Move this to UIStateStore
 
   public supabaseClient: SupabaseClient;
 

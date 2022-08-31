@@ -1,1 +1,5 @@
-import { ModuleRequirements, GeneralRequirements, Requirements } from "../types";
+import { ModuleRequirements, GeneralRequirements, Requirements, Course } from "../types";
+
+export function checkRequirements(requirements: Requirements, completedCourses: Course[]) {
+
+}
