@@ -69,13 +69,22 @@ export class ApplicationStore {
     if (this.requirements !== null) {
       if (this.completedCourses.includes(course)) {
         this.completedCourses.splice(this.completedCourses.indexOf(course), 1);
-        checkModRequirementsMatch(course, this.requirements, "remove");
+        const [newRequirements, matched] =  checkModRequirementsMatch(course, this.requirements, "remove");
+        if (matched) { // TODO: is this a redundant check due to the .includes check?
+          this.requirements = newRequirements;
+        }
       } else if (this.completedAndUnmatchedCourses.includes(course)) {
         this.completedAndUnmatchedCourses.splice(this.completedAndUnmatchedCourses.indexOf(course), 1);
-        checkModRequirementsMatch(course, this.requirements, "remove");
+        const [newRequirements, matched] =  checkModRequirementsMatch(course, this.requirements, "remove");
+        if (matched) { // TODO: is this a redundant check due to the .includes check?
+          this.requirements = newRequirements;
+        }
       } else if (this.generalRequirementsMatchedCourses.includes(course)) {
         this.generalRequirementsMatchedCourses.splice(this.generalRequirementsMatchedCourses.indexOf(course), 1);
-        checkGenRequirementsMatch(this.requirements, this.completedAndUnmatchedCourses, "remove");
+        const [newRequirements, matched] = checkGenRequirementsMatch(course, this.requirements, "remove");
+        if (matched) { // TODO: is this a redundant check due to the .includes check?
+          this.requirements = newRequirements;
+        }
       }
     }
   }
@@ -83,9 +92,15 @@ export class ApplicationStore {
   // onSubmit, check all courses that haven't been matched, against GeneralRequirements
   public submitCoursesForCheck() {
     if (this.requirements !== null) {
-      // const result = checkGenRequirementsMatch(this.requirements, this.completedAndUnmatchedCourses);
+      for (let course of this.completedAndUnmatchedCourses) {
+        const [newRequirements, matched] = checkGenRequirementsMatch(course, this.requirements, "add"); 
+        if (matched) {
+          this.generalRequirementsMatchedCourses.push(course);
+          this.completedAndUnmatchedCourses.splice(this.completedAndUnmatchedCourses.indexOf(course), 1);
+          this.requirements = newRequirements;
+        }
+      }
     }
-    
   }
 
   public setRequirements(requirements: Requirements) {

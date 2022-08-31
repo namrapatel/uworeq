@@ -2,23 +2,32 @@ import { Requirements, Course } from "../types";
 import { testRequirements, testCompletedCourses } from "../backend/testData";
 
 // Check for match in General Requirements
-export function checkGenRequirementsMatch(requirements: Requirements, completedAndUnmatchedCourses: Course[], operation: string) {
+export function checkGenRequirementsMatch(course: Course, requirements: Requirements, operation: string): [Requirements, boolean] {
     
+    var matchFound = false; 
 
-    // if (requirements.generalRequirements) {
-    //     requirements.generalRequirements.requirements.forEach(line => {
-    //         if (!line.completed) {
-    //             // Check courseList for a match
-    //             if (line.category.includes(selectedCourse.breadthCategory)) {
-    //                 line.coursesRemaining - selectedCourse.courseWeight;
-    //                 matchFound = true;
-    //                 if (line.coursesRemaining === 0) {
-    //                     line.completed = true;
-    //                 }
-    //             }
-    //         }
-    //     });
-    // }
+    if (requirements.generalRequirements) {
+        requirements.generalRequirements.requirements.forEach(line => {
+            if (!line.completed) {
+                // Check courseList for a match
+                if (line.category.includes(course.breadthCategory)) {
+                    matchFound = true;
+                    if (operation === "add") {
+                        line.coursesRemaining - course.courseWeight;
+                        if (line.coursesRemaining === 0) {
+                            line.completed = true;
+                        }
+                    } else {
+                        // Handle remove case where a course is being removed from a General Requirement match
+                        line.coursesRemaining + course.courseWeight;
+                        line.completed = false
+                    }
+                }
+            }
+        });
+    }
+
+    return [requirements, matchFound];
 }
 
 // Check for match in Module Requirements
