@@ -1,12 +1,13 @@
 import { Subject, Course, Requirements } from "../types";
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
 import { makeAutoObservable, observable, action, autorun } from 'mobx';
-import { checkCourseMatch, checkRequirements } from "../backend/checkRequirements";
+import { checkModRequirementsMatch, checkGenRequirementsMatch } from "../backend/checkRequirements";
 
 export class ApplicationStore {
   public subjects: Subject[];
   public completedCourses: Course[];
   public completedAndUnmatchedCourses: Course[];
+  public generalRequirementsMatchedCourses: Course[];
   public requirements: Requirements | null;
 
   public selectedSubject: Subject; // TODO: Move this to UIStateStore
@@ -19,6 +20,7 @@ export class ApplicationStore {
         subjects: observable,
         completedCourses: observable,
         completedAndUnmatchedCourses: observable,
+        generalRequirementsMatchedCourses: observable,
         requirements: observable,
         selectedSubject: observable,
         supabaseClient: observable,
@@ -31,6 +33,7 @@ export class ApplicationStore {
     this.requirements = null;
     this.completedCourses = [];
     this.completedAndUnmatchedCourses = [];
+    this.generalRequirementsMatchedCourses = [];
     this.initSubjects();
     // Dummy subject
     this.selectedSubject = {
@@ -42,7 +45,7 @@ export class ApplicationStore {
   }
 
   public handleCourseAdditionOrRemoval(course: Course) {
-    if (this.completedCourses.includes(course) || this.completedAndUnmatchedCourses.includes(course)) {
+    if (this.completedCourses.includes(course) || this.completedAndUnmatchedCourses.includes(course) || this.generalRequirementsMatchedCourses.includes(course)) {
       this.removeCompletedCourse(course);
     } else {
       this.addCompletedCourse(course);
@@ -51,12 +54,13 @@ export class ApplicationStore {
 
   private addCompletedCourse(course: Course) {
     if (this.requirements !== null) {
-      const matched = checkCourseMatch(course, this.requirements, true);
-      if (matched[1]) {
+      const [newRequirements, matched] = checkModRequirementsMatch(course, this.requirements, "add");
+      if (matched) {
         this.completedCourses.push(course);
       } else {
         this.completedAndUnmatchedCourses.push(course);
       }
+      this.requirements = newRequirements;
     }
   }
 
@@ -65,15 +69,21 @@ export class ApplicationStore {
     if (this.requirements !== null) {
       if (this.completedCourses.includes(course)) {
         this.completedCourses.splice(this.completedCourses.indexOf(course), 1);
+        checkModRequirementsMatch(course, this.requirements, "remove");
       } else if (this.completedAndUnmatchedCourses.includes(course)) {
         this.completedAndUnmatchedCourses.splice(this.completedAndUnmatchedCourses.indexOf(course), 1);
+        checkModRequirementsMatch(course, this.requirements, "remove");
+      } else if (this.generalRequirementsMatchedCourses.includes(course)) {
+        this.generalRequirementsMatchedCourses.splice(this.generalRequirementsMatchedCourses.indexOf(course), 1);
+        checkGenRequirementsMatch(this.requirements, this.completedAndUnmatchedCourses, "remove");
       }
     }
   }
 
+  // onSubmit, check all courses that haven't been matched, against GeneralRequirements
   public submitCoursesForCheck() {
     if (this.requirements !== null) {
-      const result = checkRequirements(this.requirements, this.completedAndUnmatchedCourses);
+      // const result = checkGenRequirementsMatch(this.requirements, this.completedAndUnmatchedCourses);
     }
     
   }

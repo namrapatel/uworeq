@@ -1,8 +1,10 @@
 import { Requirements, Course } from "../types";
 import { testRequirements, testCompletedCourses } from "../backend/testData";
 
-export function checkRequirements(requirements: Requirements, completedCourses: Course[]) {
-    // Check for match in General Requirements
+// Check for match in General Requirements
+export function checkGenRequirementsMatch(requirements: Requirements, completedAndUnmatchedCourses: Course[], operation: string) {
+    
+
     // if (requirements.generalRequirements) {
     //     requirements.generalRequirements.requirements.forEach(line => {
     //         if (!line.completed) {
@@ -19,8 +21,8 @@ export function checkRequirements(requirements: Requirements, completedCourses: 
     // }
 }
 
-// TODO: Does subjectToLevelMapping need the completed field?
-export function checkCourseMatch(selectedCourse: Course, requirements: Requirements, add: boolean): [Requirements, boolean] {
+// Check for match in Module Requirements
+export function checkModRequirementsMatch(selectedCourse: Course, requirements: Requirements, operation: string): [Requirements, boolean] {
 
     var matchFound = false;
 
@@ -33,7 +35,7 @@ export function checkCourseMatch(selectedCourse: Course, requirements: Requireme
                     if (course.courseName === selectedCourse.formalSubjectName && course.courseNumber === selectedCourse.courseNumber) {
                         console.log("Match found in courseList");
                         matchFound = true;
-                        if (add) {  
+                        if (operation === "add") {  
                             course.completed = true;
                             line.coursesRemaining - selectedCourse.courseWeight;
                             if (line.coursesRemaining === 0) {
@@ -56,10 +58,10 @@ export function checkCourseMatch(selectedCourse: Course, requirements: Requireme
                                 var first = parseInt(subject.level.substring(0, 4));
                                 var second = parseInt(subject.level.substring(5));
                                 if (selectedCourse.courseNumber >= first && selectedCourse.courseNumber <= second) {
-                                    // subject.completed = true;
+                                    // subject.completed = true; TODO: Does subjectToLevelMapping need the completed field?
                                     matchFound = true;
                                     console.log("Match found in subjectToLevelMapping: abcd-wxyz case");
-                                    if (add) {
+                                    if (operation === "add") {
                                         line.coursesRemaining - selectedCourse.courseWeight;
                                         if (line.coursesRemaining === 0) {
                                             line.completed = true;
@@ -75,7 +77,7 @@ export function checkCourseMatch(selectedCourse: Course, requirements: Requireme
                                     // subject.completed = true;
                                     console.log("Match found in subjectToLevelMapping: abcd+ case");
                                     matchFound = true;
-                                    if (add) {
+                                    if (operation === "add") {
                                         line.coursesRemaining - selectedCourse.courseWeight;
                                         if (line.coursesRemaining === 0) {
                                             line.completed = true;
@@ -94,5 +96,3 @@ export function checkCourseMatch(selectedCourse: Course, requirements: Requireme
     }
     return [requirements, matchFound];
 }
-
-console.log(checkCourseMatch(testCompletedCourses[0], testRequirements, true));
