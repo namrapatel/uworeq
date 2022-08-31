@@ -38,6 +38,7 @@ export interface RequirementsLine {
         level: string;
         completed: boolean;
     }[] | null;
+    coursesRemaining: number;
     completed: boolean;
 }
 
@@ -45,11 +46,6 @@ export interface ModuleRequirements {
     moduleName: string;
     lines: RequirementsLine[];
     completed: boolean;
-}
-
-export interface RequirementsCompletionData {
-    requirements: Requirements;
-
 }
 
 // General Requirements Types

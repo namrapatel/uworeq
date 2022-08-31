@@ -6,18 +6,21 @@
                 "courses": 1.0,
                 "operator": "OR",
                 "category": "A",
+                "coursesRemaining": 1.0,
                 "completed": false
             },
             {
                 "courses": 1.0,
                 "operator": "OR",
                 "category": "B",
+                "coursesRemaining": 1.0,
                 "completed": false
             },
             {
                 "courses": 1.0,
                 "operator": "OR",
                 "category": "C",
+                "coursesRemaining": 1.0,
                 "completed": false
             }
         ]
@@ -29,6 +32,7 @@
                 "courses": 1.5,
                 "operator": "OR",
                 "category": ["A", "B"],
+                "coursesRemaining": 1.5,
                 "completed": false
             }
         ]

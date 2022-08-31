@@ -1,10 +1,11 @@
-import { Subject, Course } from "../types";
+import { Subject, Course, Requirements } from "../types";
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
 import { makeAutoObservable, observable, action, autorun } from 'mobx';
 
 export class ApplicationStore {
   public subjects: Subject[];
   public completedCourses: Course[];
+  public requirements: Requirements | null;
 
   public selectedSubject: Subject; // TODO: Move this to UIStateStore
 
@@ -15,6 +16,7 @@ export class ApplicationStore {
       {
         subjects: observable,
         completedCourses: observable,
+        requirements: observable,
         selectedSubject: observable,
         supabaseClient: observable,
         setSelectedSubject: action,
@@ -23,6 +25,7 @@ export class ApplicationStore {
 
     this.supabaseClient = this.initSupabase();
     this.subjects = [];
+    this.requirements = null;
     this.completedCourses = [];
     this.initSubjects();
     // Dummy subject

@@ -74,6 +74,7 @@
           }
         ],
         "subjectToLevelMapping": "",
+        "coursesRemaining": 5.5,
         "completed": false
       },
       {
@@ -94,6 +95,7 @@
           }
         ],
         "subjectToLevelMapping": "",
+        "coursesRemaining": 0.5,
         "completed": false
       },
       {
@@ -126,6 +128,7 @@
           }
         ],
         "subjectToLevelMapping": "",
+        "coursesRemaining": 0.5,
         "completed": false
       },
       {
@@ -140,6 +143,7 @@
           }
         ],
         "subjectToLevelMapping": "",
+        "coursesRemaining": 0.5,
         "completed": false
       },
       {
@@ -160,6 +164,7 @@
             "completed": false
           }
         ],
+        "coursesRemaining": 1.0,
         "completed": false
       },
       {
@@ -192,6 +197,7 @@
             "completed": false
           }
         ],
+        "coursesRemaining": 0.5,
         "completed": false
       },
       {
@@ -224,6 +230,7 @@
           }
         ],
         "subjectToLevelMapping": "",
+        "coursesRemaining": 0.5,
         "completed": false
       }
     ],
@@ -298,6 +305,7 @@
           }
         ],
         "subjectToLevelMapping": "",
+        "coursesRemaining": 5.0,
         "completed": false
       },
       {
@@ -318,6 +326,7 @@
           }
         ],
         "subjectToLevelMapping": "",
+        "coursesRemaining": 0.5,
         "completed": false
       },
       {
@@ -350,6 +359,7 @@
           }
         ],
         "subjectToLevelMapping": "",
+        "coursesRemaining": 0.5,
         "completed": false
       },
       {
@@ -370,6 +380,7 @@
             "completed": false
           }
         ],
+        "coursesRemaining": 1.5,
         "completed": false
       },
       {
@@ -402,6 +413,7 @@
             "completed": false
           }
         ],
+        "coursesRemaining": 1.0,
         "completed": false
       },
       {
@@ -434,6 +446,7 @@
           }
         ],
         "subjectToLevelMapping": "",
+        "coursesRemaining": 0.5,
         "completed": false
       }
     ],
@@ -490,6 +503,7 @@
           }
         ],
         "subjectToLevelMapping": "",
+        "coursesRemaining": 3.5,
         "completed": false
       },
       {
@@ -510,6 +524,7 @@
           }
         ],
         "subjectToLevelMapping": "",
+        "coursesRemaining": 0.5,
         "completed": false
       },
       {
@@ -548,6 +563,7 @@
             "completed": false
           }
         ],
+        "coursesRemaining": 1.0,
         "completed": false
       }
     ],
@@ -580,6 +596,7 @@
           }
         ],
         "subjectToLevelMapping": "",
+        "coursesRemaining": 1.5,
         "completed": false
       },
       {
@@ -600,6 +617,7 @@
           }
         ],
         "subjectToLevelMapping": "",
+        "coursesRemaining": 0.5,
         "completed": false
       },
       {
@@ -650,6 +668,7 @@
             "completed": false
           }
         ],
+        "coursesRemaining": 2.0,
         "completed": false
       }
     ],
