@@ -1,7 +1,7 @@
 import { Subject, Course, Requirements } from "../types";
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
 import { makeAutoObservable, observable, action, autorun } from 'mobx';
-import { checkCourseMatch } from "../backend/checkRequirements";
+import { checkCourseMatch, checkRequirements } from "../backend/checkRequirements";
 
 export class ApplicationStore {
   public subjects: Subject[];
@@ -42,7 +42,7 @@ export class ApplicationStore {
   }
 
   public handleCourseAdditionOrRemoval(course: Course) {
-    if (this.completedCourses.includes(course)) {
+    if (this.completedCourses.includes(course) || this.completedAndUnmatchedCourses.includes(course)) {
       this.removeCompletedCourse(course);
     } else {
       this.addCompletedCourse(course);
@@ -72,6 +72,9 @@ export class ApplicationStore {
   }
 
   public submitCoursesForCheck() {
+    if (this.requirements !== null) {
+      const result = checkRequirements(this.requirements, this.completedAndUnmatchedCourses);
+    }
     
   }
 
