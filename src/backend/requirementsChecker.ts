@@ -1,5 +1,5 @@
 import { Requirements, Course } from "../types";
-import { testRequirements, testCompletedCourses } from "../backend/testData";
+import { testRequirements, testCompletedCourses } from "./testData";
 
 // Check for match in General Requirements
 export function checkGenRequirementsMatch(course: Course, requirements: Requirements, operation: string): [Requirements, boolean] {
@@ -26,7 +26,6 @@ export function checkGenRequirementsMatch(course: Course, requirements: Requirem
             }
         });
     }
-
     return [requirements, matchFound];
 }
 

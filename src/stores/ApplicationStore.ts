@@ -1,7 +1,8 @@
-import { Subject, Course, Requirements } from "../types";
+import { Subject, Course, Requirements, ModuleRequirements } from "../types";
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
 import { makeAutoObservable, observable, action, autorun } from 'mobx';
-import { checkModRequirementsMatch, checkGenRequirementsMatch } from "../backend/checkRequirements";
+import { checkModRequirementsMatch, checkGenRequirementsMatch } from "../backend/requirementsChecker";
+import { buildRequirements } from "../backend/requirementsBuilder";
 
 export class ApplicationStore {
   public subjects: Subject[];
@@ -101,6 +102,10 @@ export class ApplicationStore {
         }
       }
     }
+  }
+
+  public initRequirements(moduleRequirements: ModuleRequirements) {
+    this.requirements = buildRequirements(moduleRequirements);
   }
 
   public setRequirements(requirements: Requirements) {
