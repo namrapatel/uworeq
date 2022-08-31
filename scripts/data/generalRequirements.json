@@ -5,17 +5,20 @@
             {
                 "courses": 1.0,
                 "operator": "OR",
-                "category": "A"
+                "category": "A",
+                "completed": false
             },
             {
                 "courses": 1.0,
                 "operator": "OR",
-                "category": "B"
+                "category": "B",
+                "completed": false
             },
             {
                 "courses": 1.0,
                 "operator": "OR",
-                "category": "C"
+                "category": "C",
+                "completed": false
             }
         ]
     },
@@ -25,7 +28,8 @@
             {
                 "courses": 1.5,
                 "operator": "OR",
-                "category": ["A", "B"]
+                "category": ["A", "B"],
+                "completed": false
             }
         ]
     }

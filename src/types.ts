@@ -26,6 +26,7 @@ export interface PartialCourse {
     courseName: string;
     courseNumber: number;
     courseLetter: string[] | string;
+    completed: boolean;
 }
 
 export interface RequirementsLine {
@@ -35,12 +36,20 @@ export interface RequirementsLine {
     subjectToLevelMapping: {   
         subjectCode: string;
         level: string;
+        completed: boolean;
     }[] | null;
+    completed: boolean;
 }
 
 export interface ModuleRequirements {
     moduleName: string;
     lines: RequirementsLine[];
+    completed: boolean;
+}
+
+export interface RequirementsCompletionData {
+    requirements: Requirements;
+
 }
 
 // General Requirements Types
