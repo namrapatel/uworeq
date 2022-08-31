@@ -54,6 +54,10 @@ export class ApplicationStore {
     this.completedCourses.splice(this.completedCourses.indexOf(course), 1);
   }
 
+  public setRequirements(requirements: Requirements) {
+    this.requirements = requirements;
+  }
+
   public setSelectedSubject(subject: Subject) {
     this.selectedSubject = subject;
     console.log("Selected subject is: "+this.selectedSubject.name);

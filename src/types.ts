@@ -51,11 +51,13 @@ export interface ModuleRequirements {
 // General Requirements Types
 export interface GeneralRequirements {
     moduleName: string;
-    requirements: GeneralRequirementLine[] | GeneralRequirementLine;
+    requirements: GeneralRequirementLine[];
 }
 
 export interface GeneralRequirementLine {
     courses: number;
     operator: string;
     category: string[] | string;
+    coursesRemaining: number;
+    completed: boolean;
 }
