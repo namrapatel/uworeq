@@ -1,10 +1,12 @@
 import { Subject, Course, Requirements } from "../types";
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
 import { makeAutoObservable, observable, action, autorun } from 'mobx';
+import { checkCourseMatch } from "../backend/checkRequirements";
 
 export class ApplicationStore {
   public subjects: Subject[];
   public completedCourses: Course[];
+  public completedAndUnmatchedCourses: Course[];
   public requirements: Requirements | null;
 
   public selectedSubject: Subject; // TODO: Move this to UIStateStore
@@ -16,6 +18,7 @@ export class ApplicationStore {
       {
         subjects: observable,
         completedCourses: observable,
+        completedAndUnmatchedCourses: observable,
         requirements: observable,
         selectedSubject: observable,
         supabaseClient: observable,
@@ -27,6 +30,7 @@ export class ApplicationStore {
     this.subjects = [];
     this.requirements = null;
     this.completedCourses = [];
+    this.completedAndUnmatchedCourses = [];
     this.initSubjects();
     // Dummy subject
     this.selectedSubject = {
@@ -46,12 +50,29 @@ export class ApplicationStore {
   }
 
   private addCompletedCourse(course: Course) {
-    this.completedCourses.push(course);
+    if (this.requirements !== null) {
+      const matched = checkCourseMatch(course, this.requirements, true);
+      if (matched[1]) {
+        this.completedCourses.push(course);
+      } else {
+        this.completedAndUnmatchedCourses.push(course);
+      }
+    }
   }
 
   // TODO: test this method
   private removeCompletedCourse(course: Course) {
-    this.completedCourses.splice(this.completedCourses.indexOf(course), 1);
+    if (this.requirements !== null) {
+      if (this.completedCourses.includes(course)) {
+        this.completedCourses.splice(this.completedCourses.indexOf(course), 1);
+      } else if (this.completedAndUnmatchedCourses.includes(course)) {
+        this.completedAndUnmatchedCourses.splice(this.completedAndUnmatchedCourses.indexOf(course), 1);
+      }
+    }
+  }
+
+  public submitCoursesForCheck() {
+    
   }
 
   public setRequirements(requirements: Requirements) {
