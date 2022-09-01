@@ -1,9 +1,9 @@
 import { observer } from "mobx-react";
+import styled from "styled-components";
 import React, { useState } from "react";
 import { AppContext } from "../AppContext";
-import styled from "styled-components";
-import { SubjectsPage } from "./SubjectsPage"; 
-import { CoursesPage } from "./CoursesPage";
+import { CoursesView } from "../views/CoursesView";
+import { SubjectsView } from "../views/SubjectsView"; 
 
 interface Props {}
 

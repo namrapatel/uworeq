@@ -1,9 +1,9 @@
 import { observer } from "mobx-react";
+import styled from "styled-components";
 import React, { useState } from "react";
 import { AppContext } from "../AppContext";
-import styled from "styled-components";
-import { SubjectsView } from "../views/SubjectsView"; 
 import { CoursesView } from "../views/CoursesView";
+import { SubjectsView } from "../views/SubjectsView"; 
 
 interface Props {}
 
@@ -16,7 +16,7 @@ export const SelectionPage = observer(function(props: Props) {
           <SubjectsView></SubjectsView>
         </PageContainer>
         <PageContainer id="courses">
-          <SubjectsView></SubjectsView>
+          <CoursesView></CoursesView>
         </PageContainer>
         <PageContainer id="results"></PageContainer>
       </Container>
