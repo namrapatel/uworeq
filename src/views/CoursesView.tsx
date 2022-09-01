@@ -6,7 +6,7 @@ import { Course } from "../types";
 
 interface Props {}
 
-export const CoursesPage = observer(function(props: Props) {
+export const CoursesView = observer(function(props: Props) {
     const { applicationStore } = React.useContext(AppContext);
     const courses: Course[] = applicationStore.selectedSubject.courses;
     

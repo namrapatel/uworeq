@@ -8,11 +8,11 @@ import { CoursesPage } from "./CoursesPage";
 interface Props {}
 
 export const LandingPage = observer(function(props: Props) {
-  const { applicationStore } = React.useContext(AppContext);
+  const { applicationStore, uiStateStore } = React.useContext(AppContext);
 
   return (
       <Container>
-       
+        <Button onClick={() => {uiStateStore.setPage("SelectionPage")}}>Go to SelectionPage</Button>
       </Container>
   );
 });
@@ -20,4 +20,7 @@ export const LandingPage = observer(function(props: Props) {
 const Container = styled.div`
   display: flex;
   flex-direction: row;
+`;
+
+const Button = styled.button`
 `;

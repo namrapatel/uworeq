@@ -4,7 +4,6 @@ import { ApplicationStore } from './ApplicationStore';
 export class UIStateStore {
     public page: string;
     
-
     constructor() {
         makeAutoObservable(this,
           {
@@ -16,5 +15,6 @@ export class UIStateStore {
 
       public setPage(page: string) {
         this.page = page;
+        console.log("Page set to " + page);
       }
 }
