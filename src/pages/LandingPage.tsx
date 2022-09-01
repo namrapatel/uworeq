@@ -7,25 +7,15 @@ import { CoursesPage } from "./CoursesPage";
 
 interface Props {}
 
-export const HomePage = observer(function(props: Props) {
+export const LandingPage = observer(function(props: Props) {
   const { applicationStore } = React.useContext(AppContext);
 
   return (
       <Container>
-        <PageContainer id="subjects">
-          <SubjectsPage></SubjectsPage>
-        </PageContainer>
-        <PageContainer id="courses">
-          <CoursesPage></CoursesPage>
-        </PageContainer>
-        <PageContainer id="results"></PageContainer>
+       
       </Container>
   );
 });
-
-const PageContainer = styled.div` 
-  border: 1px solid #000;
- ` 
 
 const Container = styled.div`
   display: flex;

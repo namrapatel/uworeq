@@ -1,14 +1,18 @@
 import { useState } from 'react';
 import './App.css';
-import { HomePage } from './pages/HomePage';
 import { AppContext, stores } from "./AppContext";
+import { LandingPage } from './pages/LandingPage';
+import { SelectionPage } from './pages/SelectionPage';
 
 function App() {
 
   return (
       <div className="App">
           <AppContext.Provider value={stores}>
-              <HomePage />
+            {
+                stores.uiStateStore.page === "LandingPage" ? <LandingPage></LandingPage> 
+                :  <SelectionPage></SelectionPage> 
+            }
           </AppContext.Provider>
       </div>
   )
