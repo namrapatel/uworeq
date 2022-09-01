@@ -1,6 +1,5 @@
 import { observer } from 'mobx-react';
 import { useState } from 'react';
-import './App.css';
 import { AppContext, stores } from "./AppContext";
 import { LandingPage } from './pages/LandingPage';
 import { SelectionPage } from './pages/SelectionPage';
